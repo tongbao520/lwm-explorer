@@ -6,4 +6,4 @@ from baselines.common.atari_wrappers import wrap_deepmind, make_atari
 from baselines.common.vec_env import VecEnvWrapper
 
 
-def make_vec_
+def make_vec_envs(name, num, seed=0, max_ep_len=1000
