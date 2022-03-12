@@ -10,4 +10,6 @@ def make_vec_envs(name, num, seed=0, max_ep_len=100000):
     def make_env(rank):
         def _thunk():
             full_name = f"{name}NoFrameskip-v4"
-            env = make_atari(full_name, max_episode_steps=ma
+            env = make_atari(full_name, max_episode_steps=max_ep_len)
+            env.seed(seed + rank)
+ 
