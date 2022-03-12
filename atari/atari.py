@@ -9,4 +9,5 @@ from baselines.common.vec_env import VecEnvWrapper
 def make_vec_envs(name, num, seed=0, max_ep_len=100000):
     def make_env(rank):
         def _thunk():
+            full_name = f"{name}NoFrameskip-v4"
     
