@@ -13,4 +13,7 @@ def make_vec_envs(name, num, seed=0, max_ep_len=100000):
             env = make_atari(full_name, max_episode_steps=max_ep_len)
             env.seed(seed + rank)
             env = bench.Monitor(env, None)
-            env = wrap_deepmind(env, episode_life=True, clip_rewa
+            env = wrap_deepmind(env, episode_life=True, clip_rewards=False)
+            return env
+
+        re
