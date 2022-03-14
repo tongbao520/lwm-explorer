@@ -20,4 +20,8 @@ def make_vec_envs(name, num, seed=0, max_ep_len=100000):
 
     envs = [make_env(i) for i in range(num)]
     envs = ShmemVecEnv(envs, context="fork")
-    envs =
+    envs = VecTorch(envs)
+    return envs
+
+
+class VecTorch(VecEnvW
