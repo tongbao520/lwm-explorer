@@ -16,4 +16,7 @@ def make_vec_envs(name, num, seed=0, max_ep_len=100000):
             env = wrap_deepmind(env, episode_life=True, clip_rewards=False)
             return env
 
-        re
+        return _thunk
+
+    envs = [make_env(i) for i in range(num)]
+ 
