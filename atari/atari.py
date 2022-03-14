@@ -19,4 +19,5 @@ def make_vec_envs(name, num, seed=0, max_ep_len=100000):
         return _thunk
 
     envs = [make_env(i) for i in range(num)]
- 
+    envs = ShmemVecEnv(envs, context="fork")
+    envs =
