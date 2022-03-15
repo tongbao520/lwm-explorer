@@ -26,4 +26,5 @@ def make_vec_envs(name, num, seed=0, max_ep_len=100000):
 
 class VecTorch(VecEnvWrapper):
     def __init__(self, env):
-        supe
+        super(VecTorch, self).__init__(env)
+        obs = self.obser
