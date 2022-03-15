@@ -24,4 +24,6 @@ def make_vec_envs(name, num, seed=0, max_ep_len=100000):
     return envs
 
 
-class VecTorch(VecEnvW
+class VecTorch(VecEnvWrapper):
+    def __init__(self, env):
+        supe
