@@ -29,4 +29,5 @@ class VecTorch(VecEnvWrapper):
         super(VecTorch, self).__init__(env)
         obs = self.observation_space.shape
         self.observation_space = Box(0, 255, [obs[2], obs[0], obs[1]],
-                        
+                                     dtype=self.observation_space.dtype)
+
