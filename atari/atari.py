@@ -31,3 +31,5 @@ class VecTorch(VecEnvWrapper):
         self.observation_space = Box(0, 255, [obs[2], obs[0], obs[1]],
                                      dtype=self.observation_space.dtype)
 
+    def _convert_obs(self, x):
+        return torch.fro
