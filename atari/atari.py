@@ -32,4 +32,7 @@ class VecTorch(VecEnvWrapper):
                                      dtype=self.observation_space.dtype)
 
     def _convert_obs(self, x):
-        return torch.fro
+        return torch.from_numpy(x).permute(0, 3, 1, 2)
+
+    def reset(self):
+        return sel
