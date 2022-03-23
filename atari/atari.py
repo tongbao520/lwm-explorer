@@ -35,4 +35,6 @@ class VecTorch(VecEnvWrapper):
         return torch.from_numpy(x).permute(0, 3, 1, 2)
 
     def reset(self):
-        return sel
+        return self._convert_obs(self.venv.reset())
+
+    def step_async(self
