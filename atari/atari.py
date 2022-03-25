@@ -37,4 +37,5 @@ class VecTorch(VecEnvWrapper):
     def reset(self):
         return self._convert_obs(self.venv.reset())
 
-    def step_async(self
+    def step_async(self, actions):
+        assert len(actions.shape) == 
