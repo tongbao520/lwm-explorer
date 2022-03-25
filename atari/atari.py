@@ -38,4 +38,6 @@ class VecTorch(VecEnvWrapper):
         return self._convert_obs(self.venv.reset())
 
     def step_async(self, actions):
-        assert len(actions.shape) == 
+        assert len(actions.shape) == 2
+        actions = actions[:, 0].cpu().numpy()
+        sel
