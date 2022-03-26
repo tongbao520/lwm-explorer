@@ -43,4 +43,6 @@ class VecTorch(VecEnvWrapper):
         self.venv.step_async(actions)
 
     def step_wait(self):
-        obs, reward, done, info = self.venv.st
+        obs, reward, done, info = self.venv.step_wait()
+        obs = self._convert_obs(obs)
+        reward =
