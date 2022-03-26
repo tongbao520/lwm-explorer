@@ -40,4 +40,6 @@ class VecTorch(VecEnvWrapper):
     def step_async(self, actions):
         assert len(actions.shape) == 2
         actions = actions[:, 0].cpu().numpy()
-        sel
+        self.venv.step_async(actions)
+
+    def step_wait(self)
