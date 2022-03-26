@@ -45,4 +45,5 @@ class VecTorch(VecEnvWrapper):
     def step_wait(self):
         obs, reward, done, info = self.venv.step_wait()
         obs = self._convert_obs(obs)
-        reward =
+        reward = torch.from_numpy(reward)[..., None].float()
+        done =
