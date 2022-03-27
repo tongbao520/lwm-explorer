@@ -46,4 +46,5 @@ class VecTorch(VecEnvWrapper):
         obs, reward, done, info = self.venv.step_wait()
         obs = self._convert_obs(obs)
         reward = torch.from_numpy(reward)[..., None].float()
-        done =
+        done = torch.tensor(done, dtype=torch.uint8)[..., None]
+        
