@@ -11,4 +11,6 @@ def replace_e_float(d):
             d[name] = float(val)
 
 
-def load_cfg(name, prefi
+def load_cfg(name, prefix="."):
+    with open(f"{prefix}/{name}.yaml") as f:
+        
