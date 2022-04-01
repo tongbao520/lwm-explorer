@@ -8,4 +8,7 @@ def replace_e_float(d):
         if type(val) == dict:
             replace_e_float(val)
         elif type(val) == str and p.match(val):
-           
+            d[name] = float(val)
+
+
+def load_cfg(name, prefi
