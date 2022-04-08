@@ -12,4 +12,5 @@ class ParamOptim:
     eps: float = 1e-8
     clip_grad: float = None
 
-    def
+    def __post_init__(self):
+        self.optim = Adam(s
