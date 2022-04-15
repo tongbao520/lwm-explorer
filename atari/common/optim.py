@@ -15,4 +15,6 @@ class ParamOptim:
     def __post_init__(self):
         self.optim = Adam(self.params, lr=self.lr, eps=self.eps)
 
-    def ste
+    def step(self, loss):
+        self.optim.zero_grad()
+        loss
