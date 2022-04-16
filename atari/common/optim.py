@@ -18,4 +18,5 @@ class ParamOptim:
     def step(self, loss):
         self.optim.zero_grad()
         loss.backward()
-        if self.clip_grad is not No
+        if self.clip_grad is not None:
+            clip_grad_norm_(self.params, self.c
