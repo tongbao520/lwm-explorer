@@ -6,4 +6,6 @@ import numpy as np
 def timer_log(num_iter=1000):
     log = {}
     mean_t = defaultdict(list)
-  
+    t = mark = None
+    while True:
+        prev_t, prev_ma
