@@ -8,4 +8,6 @@ def timer_log(num_iter=1000):
     mean_t = defaultdict(list)
     t = mark = None
     while True:
-        prev_t, prev_ma
+        prev_t, prev_mark = t, mark
+        mark = yield log
+        t = time(
