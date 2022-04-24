@@ -12,4 +12,6 @@ def timer_log(num_iter=1000):
         mark = yield log
         t = time()
         if prev_mark is not None:
-            mean_t[prev_
+            mean_t[prev_mark].append(t - prev_t)
+
+        if mark is None
