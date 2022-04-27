@@ -1,2 +1,7 @@
 optim:
     lr: 1e-4
+    eps: 1e-3
+    clip_grad: 40
+
+agent:
+    actors: 
