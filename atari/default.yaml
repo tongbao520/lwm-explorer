@@ -4,4 +4,7 @@ optim:
     clip_grad: 40
 
 agent:
-    actors: 
+    actors: 128
+    unroll: 80
+    burnin: 40
+    batch
