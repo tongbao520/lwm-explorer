@@ -7,4 +7,7 @@ agent:
     actors: 128
     unroll: 80
     burnin: 40
-    batch
+    batch_size: 16
+    frame_stack: 1
+    n_step: 5
+ 
