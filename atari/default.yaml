@@ -15,4 +15,6 @@ agent:
     # eps: 0.01
 
 w_mse:
-  
+    lr: 5e-4
+    frame_stack: 1
+    spatial_shift:
