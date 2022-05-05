@@ -17,4 +17,8 @@ agent:
 w_mse:
     lr: 5e-4
     frame_stack: 1
-    spatial_shift:
+    spatial_shift: 4
+    temporal_shift: 2
+    emb_size: 32
+    rnn_size: 256
+  
