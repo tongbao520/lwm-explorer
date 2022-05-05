@@ -21,4 +21,8 @@ w_mse:
     temporal_shift: 2
     emb_size: 32
     rnn_size: 256
-  
+    ri_momentum: 0.999
+    ri_clamp: 10
+
+buffer:
+    
