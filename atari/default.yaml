@@ -25,4 +25,7 @@ w_mse:
     ri_clamp: 10
 
 buffer:
-    
+    device: cpu
+    size: 1e6
+    warmup: 4e5
+    prior_
