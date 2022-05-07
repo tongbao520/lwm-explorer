@@ -31,4 +31,7 @@ buffer:
     prior_exp: 0.9
     importance_sampling_exp: 0.6
 
-train
+train:
+    frames: 5e7
+    max_ep_len: 10000
+    learner_
