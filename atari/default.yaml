@@ -28,4 +28,7 @@ buffer:
     device: cpu
     size: 1e6
     warmup: 4e5
-    prior_
+    prior_exp: 0.9
+    importance_sampling_exp: 0.6
+
+train
