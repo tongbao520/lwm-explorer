@@ -37,4 +37,4 @@ train:
     learner_every: 1
     w_mse_every: 1
     log_every: 100
-    checkpoint_eve
+    checkpoint_every: 1000
