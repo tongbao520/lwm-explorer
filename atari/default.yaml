@@ -34,4 +34,7 @@ buffer:
 train:
     frames: 5e7
     max_ep_len: 10000
-    learner_
+    learner_every: 1
+    w_mse_every: 1
+    log_every: 100
+    checkpoint_eve
