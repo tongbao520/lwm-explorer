@@ -3,4 +3,4 @@ from .model import DQN
 from .learner import Learner
 
 
-__all__ = ["actor_iter", "Le
+__all__ = ["actor_iter", "Learner", "DQN"]
