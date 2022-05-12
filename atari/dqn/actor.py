@@ -36,3 +36,26 @@ def actor_iter(env, model, predictor, warmup, eps=None):
                 qs, hx = model(**full_step, hx=hx)
                 action_greedy = qs[0].argmax(1)[..., None].cpu()
             x = torch.rand(env.num_envs, 1) > eps
+            action[x] = action_greedy[x]
+
+        timer.send("actor/env")
+        # done = 1 means obs is first step of next episode
+        # prev_obs + action = obs
+        obs, reward, done, infos = env.step(action)
+
+        log = timer.send(None)
+
+        ep = [info["episode"] for info in infos if "episode" in info]
+        mean_reward += [x["r"] for x in ep]
+        mean_len += [x["l"] for x in ep]
+        if len(mean_reward) >= env.num_envs:
+            log = {
+                "reward": np.mean(mean_reward),
+                "len": np.mean(mean_len),
+                **log,
+            }
+            mean_reward, mean_len, = [], []
+        if "episode" in infos[-1]:
+            log = {"reward_last": infos[-1]["episode"]["r"], **log}
+
+        step = {"obs": obs, "action": action, "reward": reward, "done": done}
