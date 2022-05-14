@@ -5,4 +5,7 @@ from common.pad_dim import pad_dim
 
 def vf_rescaling(x):
     eps = 1e-3
-    return torch.sign(x) * (torch.sqrt(tor
+    return torch.sign(x) * (torch.sqrt(torch.abs(x) + 1) - 1) + eps * x
+
+
+def inv_vf_rescalin
