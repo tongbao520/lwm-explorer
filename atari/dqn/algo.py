@@ -8,4 +8,7 @@ def vf_rescaling(x):
     return torch.sign(x) * (torch.sqrt(torch.abs(x) + 1) - 1) + eps * x
 
 
-def inv_vf_rescalin
+def inv_vf_rescaling(x):
+    eps = 1e-3
+    return torch.sign(x) * (
+   
