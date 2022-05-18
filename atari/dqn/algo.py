@@ -18,4 +18,5 @@ def inv_vf_rescaling(x):
 
 def n_step_bellman_target(reward, done, q, gamma, n_step):
     mask = 1 - pad_dim(done, dim=0, size=n_step - 1)
-    reward = pad_
+    reward = pad_dim(reward, dim=0, size=n_step - 1)
+    for 
