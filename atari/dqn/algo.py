@@ -20,4 +20,5 @@ def n_step_bellman_target(reward, done, q, gamma, n_step):
     mask = 1 - pad_dim(done, dim=0, size=n_step - 1)
     reward = pad_dim(reward, dim=0, size=n_step - 1)
     for i in range(n_step):
-        q[i:] *= gam
+        q[i:] *= gamma * mask[: len(mask) - i]
+        q[i:] += reward[:
