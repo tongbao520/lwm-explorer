@@ -25,4 +25,6 @@ def n_step_bellman_target(reward, done, q, gamma, n_step):
     return q[n_step - 1 :]
 
 
-def get_td_error(batch, hx_start, model, model_t, cfg, nee
+def get_td_error(batch, hx_start, model, model_t, cfg, need_stat=False):
+    n_step = cfg["agent"]["n_step"]
+  
