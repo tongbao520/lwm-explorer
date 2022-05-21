@@ -27,4 +27,5 @@ def n_step_bellman_target(reward, done, q, gamma, n_step):
 
 def get_td_error(batch, hx_start, model, model_t, cfg, need_stat=False):
     n_step = cfg["agent"]["n_step"]
-    pf = cfg["agent"]["frame_stack"] - 1  # 
+    pf = cfg["agent"]["frame_stack"] - 1  # prefix for frame stack
+    burnin = cfg["agent"]["b
