@@ -30,4 +30,5 @@ def get_td_error(batch, hx_start, model, model_t, cfg, need_stat=False):
     pf = cfg["agent"]["frame_stack"] - 1  # prefix for frame stack
     burnin = cfg["agent"]["burnin"]
     bellman_target = partial(
-        n_step_b
+        n_step_bellman_target,
+        gamma=cfg["agent"]["gamma"],
