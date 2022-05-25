@@ -32,3 +32,7 @@ def get_td_error(batch, hx_start, model, model_t, cfg, need_stat=False):
     bellman_target = partial(
         n_step_bellman_target,
         gamma=cfg["agent"]["gamma"],
+        n_step=cfg["agent"]["n_step"],
+    )
+
+    if burnin
