@@ -35,4 +35,6 @@ def get_td_error(batch, hx_start, model, model_t, cfg, need_stat=False):
         n_step=cfg["agent"]["n_step"],
     )
 
-    if burnin
+    if burnin > 0:
+        with torch.no_grad():
+      
