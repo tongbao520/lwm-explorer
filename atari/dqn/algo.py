@@ -37,4 +37,5 @@ def get_td_error(batch, hx_start, model, model_t, cfg, need_stat=False):
 
     if burnin > 0:
         with torch.no_grad():
-            hx = model(**batch[: burnin + pf], hx=hx_start,
+            hx = model(**batch[: burnin + pf], hx=hx_start, only_hx=True)
+            hx_target = model_t(
