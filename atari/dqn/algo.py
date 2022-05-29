@@ -47,4 +47,5 @@ def get_td_error(batch, hx_start, model, model_t, cfg, need_stat=False):
     with torch.no_grad():
         qs_target, _ = model_t(**batch[burnin + 1 :], hx=hx_target)
 
-    action = batc
+    action = batch["action"][burnin + pf + 1 : -n_step + 1]
+    rew
