@@ -42,3 +42,6 @@ def get_td_error(batch, hx_start, model, model_t, cfg, need_stat=False):
     else:
         hx = hx_target = None
 
+    qs, _ = model(**batch[burnin:], hx=hx)
+
+    with torc
