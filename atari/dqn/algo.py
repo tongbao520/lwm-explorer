@@ -49,4 +49,6 @@ def get_td_error(batch, hx_start, model, model_t, cfg, need_stat=False):
 
     action = batch["action"][burnin + pf + 1 : -n_step + 1]
     reward = batch["reward"][burnin + pf + 1 : -n_step + 1]
-    done = batch["done"][burnin + pf + 1 : -n_step + 1].f
+    done = batch["done"][burnin + pf + 1 : -n_step + 1].float()
+
+    q = qs[:-n_step].gather(2
