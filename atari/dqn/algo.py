@@ -48,4 +48,5 @@ def get_td_error(batch, hx_start, model, model_t, cfg, need_stat=False):
         qs_target, _ = model_t(**batch[burnin + 1 :], hx=hx_target)
 
     action = batch["action"][burnin + pf + 1 : -n_step + 1]
-    rew
+    reward = batch["reward"][burnin + pf + 1 : -n_step + 1]
+    d
