@@ -51,4 +51,5 @@ def get_td_error(batch, hx_start, model, model_t, cfg, need_stat=False):
     reward = batch["reward"][burnin + pf + 1 : -n_step + 1]
     done = batch["done"][burnin + pf + 1 : -n_step + 1].float()
 
-    q = qs[:-n_step].gather(2
+    q = qs[:-n_step].gather(2, action)
+    ns_action = qs[1:].argmax(2)[..., None].detach
