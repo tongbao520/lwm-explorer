@@ -54,4 +54,5 @@ def get_td_error(batch, hx_start, model, model_t, cfg, need_stat=False):
     q = qs[:-n_step].gather(2, action)
     ns_action = qs[1:].argmax(2)[..., None].detach()
     next_q = qs_target.gather(2, ns_action)
-   
+    next_q = inv_vf_rescaling(next_q)
+    target_q = b
