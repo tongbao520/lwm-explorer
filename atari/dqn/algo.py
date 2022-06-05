@@ -61,4 +61,6 @@ def get_td_error(batch, hx_start, model, model_t, cfg, need_stat=False):
 
     if need_stat:
         log = {
-            "loss": td_error.mea
+            "loss": td_error.mean().item(),
+            "q_mean": qs.mean().item(),
+   
