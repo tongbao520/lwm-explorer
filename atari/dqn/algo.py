@@ -59,4 +59,6 @@ def get_td_error(batch, hx_start, model, model_t, cfg, need_stat=False):
     target_q = vf_rescaling(target_q)
     td_error = (q - target_q).abs()
 
-    if nee
+    if need_stat:
+        log = {
+            "loss": td_error.mea
