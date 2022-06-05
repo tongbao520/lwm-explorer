@@ -56,4 +56,7 @@ def get_td_error(batch, hx_start, model, model_t, cfg, need_stat=False):
     next_q = qs_target.gather(2, ns_action)
     next_q = inv_vf_rescaling(next_q)
     target_q = bellman_target(reward, done, next_q)
-    target_q = vf_rescaling(targ
+    target_q = vf_rescaling(target_q)
+    td_error = (q - target_q).abs()
+
+    if nee
