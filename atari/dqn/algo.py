@@ -67,4 +67,4 @@ def get_td_error(batch, hx_start, model, model_t, cfg, need_stat=False):
         }
     else:
         log = {}
-    return td_
+    return td_error, log
