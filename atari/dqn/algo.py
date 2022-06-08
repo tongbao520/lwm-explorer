@@ -65,4 +65,6 @@ def get_td_error(batch, hx_start, model, model_t, cfg, need_stat=False):
             "q_mean": qs.mean().item(),
             "q_std": qs.std().item(),
         }
-    else
+    else:
+        log = {}
+    return td_
