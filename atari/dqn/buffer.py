@@ -9,4 +9,5 @@ class DictWithSlicing(dict):
 
 
 class Buffer:
-    def __init__(sel
+    def __init__(self, maxlen, num_env, obs_shape, device):
+        
