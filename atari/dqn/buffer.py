@@ -15,4 +15,4 @@ class Buffer:
 
         def tensor(shape=(1,), dtype=torch.float):
             return torch.empty(
-                se
+                self.maxlen, self.num_env, *shape, dtype=dty
