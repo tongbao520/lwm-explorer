@@ -18,4 +18,5 @@ class Buffer:
                 self.maxlen, self.num_env, *shape, dtype=dtype, device=self.device
             )
 
-        self.
+        self._buffer = {
+            "obs": tensor(
