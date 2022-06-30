@@ -25,4 +25,6 @@ class Buffer:
             "done": tensor(dtype=torch.uint8),
         }
 
-    def query(self,
+    def query(self, idx, idx_env, steps, device="cuda"):
+        qsize = len(idx)
+  
