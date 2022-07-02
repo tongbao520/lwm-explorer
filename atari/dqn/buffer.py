@@ -27,4 +27,4 @@ class Buffer:
 
     def query(self, idx, idx_env, steps, device="cuda"):
         qsize = len(idx)
-  
+        s = torch.arange(steps - 1, -1, 
