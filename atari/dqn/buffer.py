@@ -31,3 +31,5 @@ class Buffer:
         q0 = (idx[None, ...].repeat(steps, 1) - s[..., None]).flatten()
         q1 = idx_env[None, ...].repeat(steps, 1).flatten()
         return DictWithSlicing(
+            {
+                k: v[q0, q1].view(s
