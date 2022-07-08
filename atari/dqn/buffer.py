@@ -32,4 +32,5 @@ class Buffer:
         q1 = idx_env[None, ...].repeat(steps, 1).flatten()
         return DictWithSlicing(
             {
-                k: v[q0, q1].view(s
+                k: v[q0, q1].view(steps, qsize, *v.shape[2:]).to(device)
+                for k, 
