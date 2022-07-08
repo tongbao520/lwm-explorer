@@ -33,4 +33,6 @@ class Buffer:
         return DictWithSlicing(
             {
                 k: v[q0, q1].view(steps, qsize, *v.shape[2:]).to(device)
-                for k, 
+                for k, v in self._buffer.items()
+            }
+        )
