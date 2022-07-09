@@ -36,3 +36,6 @@ class Buffer:
                 for k, v in self._buffer.items()
             }
         )
+
+    def append(self, step):
+        for k in self
