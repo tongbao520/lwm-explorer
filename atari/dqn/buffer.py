@@ -38,4 +38,6 @@ class Buffer:
         )
 
     def append(self, step):
-        for k in self
+        for k in self._buffer:
+            if k not in step:
+                se
