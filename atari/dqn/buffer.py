@@ -40,4 +40,6 @@ class Buffer:
     def append(self, step):
         for k in self._buffer:
             if k not in step:
-                se
+                self._buffer[k][self.cursor] = 0
+            else:
+  
