@@ -42,4 +42,4 @@ class Buffer:
             if k not in step:
                 self._buffer[k][self.cursor] = 0
             else:
-  
+                assert step[k].dtype == self._bu
