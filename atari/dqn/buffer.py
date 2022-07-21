@@ -50,4 +50,5 @@ class Buffer:
 
     def get_recent(self, steps, device="cuda"):
         if len(self) == 0:
-            retu
+            return None
+        idx = torch.tensor([self.cursor - 1] * 
