@@ -54,4 +54,6 @@ class Buffer:
         idx = torch.tensor([self.cursor - 1] * self.num_env)
         idx_env = torch.arange(self.num_env)
         step = self.query(idx, idx_env, steps, device)
-        if len(self) < steps
+        if len(self) < steps:
+            for el in step.values():
+               
