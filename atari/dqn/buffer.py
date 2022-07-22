@@ -52,4 +52,5 @@ class Buffer:
         if len(self) == 0:
             return None
         idx = torch.tensor([self.cursor - 1] * self.num_env)
-        idx_env = torch.arange(se
+        idx_env = torch.arange(self.num_env)
+        step = self.que
