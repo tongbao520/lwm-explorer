@@ -56,4 +56,7 @@ class Buffer:
         step = self.query(idx, idx_env, steps, device)
         if len(self) < steps:
             for el in step.values():
-               
+                el[: steps - len(self)] = 0
+        return step
+
+    def reset(s
