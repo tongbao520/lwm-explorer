@@ -59,4 +59,7 @@ class Buffer:
                 el[: steps - len(self)] = 0
         return step
 
-    def reset(s
+    def reset(self):
+        self.cursor = self._size = 0
+
+    def __len__(self):
