@@ -63,3 +63,4 @@ class Buffer:
         self.cursor = self._size = 0
 
     def __len__(self):
+        return self._size
