@@ -73,3 +73,49 @@ class Learner:
                 self.sampler.append(tde_to_prior(loss))
 
                 if len(self.sampler) == self.sampler.maxlen:
+                    idx_new = self.s2b[self.sampler.cursor - 1]
+                    idx_old = self.s2b[self.sampler.cursor]
+                    d = (idx_old - idx_new) % self.buffer.maxlen
+                    assert self.unroll_prefix + self.unroll <= d
+                    assert d < self.unroll_prefix + self.unroll * 2
+
+    def loss_sampler(self, need_stat):
+        idx0, idx1, weights = self.sampler.sample(self.batch_size)
+        weights = weights.cuda()
+        batch = self.buffer.query(self.s2b[idx0], idx1, self.sample_steps)
+        hx = self.hxs[idx0, idx1]
+        loss_pred, ri, _ = self.predictor.get_error(batch, update_stats=True)
+        batch["reward"][1:] += ri
+        td_error, log = self.td_error(batch, hx, need_stat=need_stat)
+        self.sampler.update_prior(idx0, idx1, tde_to_prior(td_error))
+        loss = td_error.pow(2).sum(0) * weights[..., None]
+        loss_pred = loss_pred.sum(0) * weights[..., None]
+        return loss, loss_pred, ri, log
+
+    def loss_uniform(self, need_stat):
+        if len(self.buffer) < self.buffer.maxlen:
+            no_prev = set(range(self.sample_steps))
+        else:
+            no_prev = set(
+                (self.buffer.cursor + i) % self.buffer.maxlen
+                for i in range(self.sample_steps)
+            )
+        all_idx = list(set(range(len(self.buffer))) - no_prev)
+        idx0 = torch.tensor(random.choices(all_idx, k=self.batch_size))
+        idx1 = torch.tensor(
+            random.choices(range(self.buffer.num_env), k=self.batch_size)
+        )
+        batch = self.buffer.query(idx0, idx1, self.sample_steps)
+        loss_pred, ri, _ = self.predictor.get_error(batch, update_stats=True)
+        batch["reward"][1:] += ri
+        td_error, log = self.td_error(batch, None, need_stat=need_stat)
+        loss = td_error.pow(2).sum(0)
+        loss_pred = loss_pred.sum(0)
+        return loss, loss_pred, ri, log
+
+    def train(self, need_stat=True):
+        loss_f = self.loss_uniform if self.sampler is None else self.loss_sampler
+        loss, loss_pred, ri, log = loss_f(need_stat)
+        self.optim.step(loss.mean())
+        self.predictor.optim.step(loss_pred.mean())
+        self._update_target()
