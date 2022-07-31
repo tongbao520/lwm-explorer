@@ -119,3 +119,17 @@ class Learner:
         self.optim.step(loss.mean())
         self.predictor.optim.step(loss_pred.mean())
         self._update_target()
+
+        if need_stat:
+            log.update(
+                {
+                    "ri_std": ri.std(),
+                    "ri_mean": ri.mean(),
+                    "ri_run_mean": self.predictor.ri_mean,
+                    "ri_run_std": self.predictor.ri_std,
+                    "loss_predictor": loss_pred.mean(),
+                }
+            )
+            if self.sampler is not None:
+                log.update(self.sampler.stats())
+        return log
