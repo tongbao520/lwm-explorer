@@ -4,4 +4,6 @@ from torch.nn.functional import one_hot, relu
 from dqn.prepare_obs import prepare_obs
 
 
-def mnih_cnn(size
+def mnih_cnn(size_in, size_out):
+    return nn.Sequential(
+        nn.C
