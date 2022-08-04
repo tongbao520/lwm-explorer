@@ -8,4 +8,6 @@ def mnih_cnn(size_in, size_out):
     return nn.Sequential(
         nn.Conv2d(size_in, 32, 8, 4),
         nn.ReLU(),
-        nn.Conv2
+        nn.Conv2d(32, 64, 4, 2),
+        nn.ReLU(),
+        nn.Conv
