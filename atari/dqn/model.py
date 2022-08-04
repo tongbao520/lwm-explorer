@@ -10,4 +10,6 @@ def mnih_cnn(size_in, size_out):
         nn.ReLU(),
         nn.Conv2d(32, 64, 4, 2),
         nn.ReLU(),
-        nn.Conv
+        nn.Conv2d(64, 64, 3, 1),
+        nn.ReLU(),
+     
