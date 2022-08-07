@@ -18,3 +18,4 @@ def mnih_cnn(size_in, size_out):
 
 
 class DQN(nn.Module):
+    def __init__(self, size_out, size_stack, device="cuda")
