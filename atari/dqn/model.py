@@ -12,4 +12,5 @@ def mnih_cnn(size_in, size_out):
         nn.ReLU(),
         nn.Conv2d(64, 64, 3, 1),
         nn.ReLU(),
-     
+        nn.Flatten(),
+        nn.Linear(64 *
