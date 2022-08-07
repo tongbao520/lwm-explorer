@@ -13,4 +13,8 @@ def mnih_cnn(size_in, size_out):
         nn.Conv2d(64, 64, 3, 1),
         nn.ReLU(),
         nn.Flatten(),
-        nn.Linear(64 *
+        nn.Linear(64 * 7 * 7, size_out),
+    )
+
+
+class DQN(nn.Module):
