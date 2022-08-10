@@ -22,4 +22,5 @@ class DQN(nn.Module):
         super(DQN, self).__init__()
         self.size_out = size_out
         self.size_stack = size_stack
-        self.conv = mnih_cnn(size_
+        self.conv = mnih_cnn(size_stack, 512)
+        self.rnn = nn.GRUCell(512 + 
