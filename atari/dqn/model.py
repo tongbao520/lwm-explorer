@@ -21,4 +21,5 @@ class DQN(nn.Module):
     def __init__(self, size_out, size_stack, device="cuda"):
         super(DQN, self).__init__()
         self.size_out = size_out
-        self.si
+        self.size_stack = size_stack
+        self.conv = mnih_cnn(size_
