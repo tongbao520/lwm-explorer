@@ -25,4 +25,6 @@ class DQN(nn.Module):
         self.conv = mnih_cnn(size_stack, 512)
         self.rnn = nn.GRUCell(512 + 1 + size_out, 512)
         self.adv = nn.Sequential(
-            nn.Linear(512, 512), nn.ReLU(), n
+            nn.Linear(512, 512), nn.ReLU(), nn.Linear(512, size_out, bias=False)
+        )
+  
