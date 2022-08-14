@@ -30,4 +30,5 @@ class DQN(nn.Module):
         self.val = nn.Sequential(nn.Linear(512, 512), nn.ReLU(), nn.Linear(512, 1))
         self.device = device
 
-    def forward(self, obs, actio
+    def forward(self, obs, action, reward, done, hx=None, only_hx=False):
+       
