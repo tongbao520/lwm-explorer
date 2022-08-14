@@ -28,4 +28,6 @@ class DQN(nn.Module):
             nn.Linear(512, 512), nn.ReLU(), nn.Linear(512, size_out, bias=False)
         )
         self.val = nn.Sequential(nn.Linear(512, 512), nn.ReLU(), nn.Linear(512, 1))
-        self.device 
+        self.device = device
+
+    def forward(self, obs, actio
