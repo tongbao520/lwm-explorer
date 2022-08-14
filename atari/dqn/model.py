@@ -31,4 +31,5 @@ class DQN(nn.Module):
         self.device = device
 
     def forward(self, obs, action, reward, done, hx=None, only_hx=False):
-       
+        obs = prepare_obs(obs, done, self.size_stack)
+        ste
