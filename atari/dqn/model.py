@@ -32,4 +32,5 @@ class DQN(nn.Module):
 
     def forward(self, obs, action, reward, done, hx=None, only_hx=False):
         obs = prepare_obs(obs, done, self.size_stack)
-        ste
+        steps, batch, *img_shape = obs.shape
+        obs = ob
