@@ -35,4 +35,7 @@ class DQN(nn.Module):
         steps, batch, *img_shape = obs.shape
         obs = obs.view(steps * batch, *img_shape)
         x = relu(self.conv(obs))
-        x = x.view(steps,
+        x = x.view(steps, batch, 512)
+
+        pf = self.size_stack - 1
+        mask
