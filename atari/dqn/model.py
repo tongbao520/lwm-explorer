@@ -38,4 +38,5 @@ class DQN(nn.Module):
         x = x.view(steps, batch, 512)
 
         pf = self.size_stack - 1
-        mask
+        mask = (1 - done[pf:]).float()
+        a = one_hot(action[pf
