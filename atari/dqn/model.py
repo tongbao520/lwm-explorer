@@ -43,4 +43,4 @@ class DQN(nn.Module):
         r = reward[pf:] * mask
         x = torch.cat([x, a, r], 2)
 
-       
+        y = torch.empty(steps, batch, 512, device=self.devi
