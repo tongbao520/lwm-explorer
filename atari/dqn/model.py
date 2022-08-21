@@ -39,4 +39,5 @@ class DQN(nn.Module):
 
         pf = self.size_stack - 1
         mask = (1 - done[pf:]).float()
-        a = one_hot(action[pf
+        a = one_hot(action[pf:, :, 0], self.size_out).float() * mask
+        r = rewar
