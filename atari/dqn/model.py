@@ -52,4 +52,5 @@ class DQN(nn.Module):
         if only_hx:
             return hx
 
-        y = y.v
+        y = y.view(steps * batch, 512)
+        adv, val = self.adv
