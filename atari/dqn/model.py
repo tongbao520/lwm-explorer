@@ -47,4 +47,5 @@ class DQN(nn.Module):
         for i in range(steps):
             if hx is not None:
                 hx *= mask[i]
-            y[i]
+            y[i] = hx = self.rnn(x[i], hx)
+        hx = hx.clone().deta
