@@ -45,4 +45,6 @@ class DQN(nn.Module):
 
         y = torch.empty(steps, batch, 512, device=self.device)
         for i in range(steps):
-            if hx is no
+            if hx is not None:
+                hx *= mask[i]
+            y[i]
