@@ -53,4 +53,5 @@ class DQN(nn.Module):
             return hx
 
         y = y.view(steps * batch, 512)
-        adv, val = self.adv
+        adv, val = self.adv(y), self.val(y)
+        q = val + adv - adv.mean(1, keepdim=True)
