@@ -29,3 +29,11 @@ def stack_frames(x, stack=4):
 
 def obs_mask(done):
     """
+    mask to zero out observations in 4-frame stack when done = 1
+    """
+    mask = 1 - done[:, :, 1:]
+    for i in reversed(range(mask.shape[2] - 1)):
+        mask[:, :, i] *= mask[:, :, i + 1]
+    mask = torch.cat([mask, torch.ones_like(mask[:, :, -1:])], 2)
+    mask = mask[..., None, None]
+    return mask
