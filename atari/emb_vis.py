@@ -45,3 +45,57 @@ def key_release(key, mod):
     if cur_action == a:
         cur_action = 0
 
+
+def plot(x, fname):
+    path2d = TSNE().fit_transform(x)
+    x, y = tuple(zip(*path2d))
+    plt.figure(figsize=(12, 12))
+
+    plt.scatter(x, y, c=list(range(len(x))), alpha=0.5, s=200)
+    plt.savefig(fname)
+    for i in range(0, len(x), 10):
+        plt.text(
+            x[i],
+            y[i],
+            str(i),
+            horizontalalignment="center",
+            verticalalignment="center",
+            fontsize=14,
+        )
+    plt.savefig("num_" + fname)
+
+
+if __name__ == "__main__":
+    name = "MontezumaRevenge" if len(sys.argv) < 2 else sys.argv[1]
+    env = make_vec_envs(name, 1)
+
+    conv_wmse = mnih_cnn(1, 32)
+    conv_idf = mnih_cnn(1, 32)
+    conv_cpc = mnih_cnn(1, 32)
+    conv_rnd = mnih_cnn(1, 32)
+    conv_wmse.load_state_dict(torch.load("models/conv_wmse.pt", map_location="cpu"))
+    conv_idf.load_state_dict(torch.load("models/conv_idf.pt", map_location="cpu"))
+    conv_cpc.load_state_dict(torch.load("models/conv_cpc.pt", map_location="cpu"))
+    conv_wmse.eval(), conv_idf.eval(), conv_cpc.eval(), conv_rnd.eval()
+
+    mem = torch.empty(4, 1000, 32)
+    cursor = 0
+
+    env.render()
+    env.unwrapped.viewer.window.on_key_press = key_press
+    env.unwrapped.viewer.window.on_key_release = key_release
+    window_still_open = True
+
+    while window_still_open:
+        cur_action = 0
+        restart = False
+        pause = False
+
+        obs = env.reset()
+        total_reward = steps = 0
+        while 1:
+
+            steps += 1
+            if steps == 1000:
+                break
+            a = torch.tensor([[cur_action]])
