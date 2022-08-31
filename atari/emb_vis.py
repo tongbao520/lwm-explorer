@@ -99,3 +99,33 @@ if __name__ == "__main__":
             if steps == 1000:
                 break
             a = torch.tensor([[cur_action]])
+            obs, r, done, info = env.step(a)
+
+            with torch.no_grad():
+                obs = obs.float() / 128 - 1
+                mem[0, cursor] = conv_wmse(obs)[0]
+                mem[1, cursor] = conv_idf(obs)[0]
+                mem[2, cursor] = conv_cpc(obs)[0]
+                mem[3, cursor] = conv_rnd(obs)[0]
+
+            if cursor % 10 == 0:
+                print(cursor)
+            cursor += 1
+
+            if r != 0:
+                print(f"reward {r.item():0.2f}")
+            total_reward += r.item()
+            window_still_open = env.render()
+            if not window_still_open or done or restart:
+                break
+            while pause:
+                env.render()
+                time.sleep(0.1)
+            time.sleep(0.1)
+
+        print(f"timesteps {steps} reward {total_reward:0.2f}")
+
+    plot(mem[0, :cursor], "plot_wmse.png")
+    plot(mem[1, :cursor], "plot_idf.png")
+    plot(mem[2, :cursor], "plot_cpc.png")
+    plot(mem[3, :cursor], "plot_rnd.png")
