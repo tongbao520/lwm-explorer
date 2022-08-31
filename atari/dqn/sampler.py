@@ -37,3 +37,8 @@ class Sampler:
         return {
             "prior/mean": x.mean(),
             "prior/std": x.std(),
+            "prior/max": x.max(),
+        }
+
+    def __len__(self):
+        return self._size
