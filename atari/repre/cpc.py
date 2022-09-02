@@ -88,3 +88,26 @@ class CPC:
         idx0 = torch.tensor(random.choices(all_idx, k=self.batch_size))
         idx1 = torch.tensor(
             random.choices(range(self.buffer.num_env), k=self.batch_size)
+        )
+        batch = self.buffer.query(idx0, idx1, sample_steps)
+
+        obs = batch["obs"]
+        action = batch["action"][self.frame_stack :]
+        done = batch["done"]
+        z, z_pred, _ = self.model(obs, action, done)
+
+        size = self.batch_size * self.unroll
+        z = z.view(size, self.emb_size)
+        z_pred = z_pred.view(size, self.emb_size)
+        logits = z @ z_pred.t()
+        loss = cross_entropy(logits, self.target)
+        acc = (logits.argmax(-1) == self.target).float().mean()
+        self.optim.step(loss)
+        return {"loss_cpc": loss.item(), "acc_cpc": acc}
+
+    def load(self):
+        cp = torch.load("models/cpc.pt", map_location=self.device)
+        self.model.load_state_dict(cp)
+
+    def save(self):
+        torch.save(self.model.state_dict(), "models/cpc.pt")
