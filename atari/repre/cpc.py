@@ -37,3 +37,54 @@ class CPCModel(nn.Module):
         steps -= 1
         y = torch.empty(steps, batch, 512, device=self.device)
         for i in range(steps):
+            if hx is not None:
+                hx *= mask[i]
+            y[i] = hx = self.rnn(x[i], hx)
+        hx = hx.clone().detach()
+        if only_hx:
+            return hx
+
+        y = y.view(steps * batch, 512)
+        z_pred = self.fc(y).view(steps, batch, self.size_emb)
+        return z[1:], z_pred, hx
+
+
+@dataclass
+class CPC:
+    buffer: Buffer
+    num_action: int
+    frame_stack: int = 1
+    batch_size: int = 32
+    unroll: int = 32
+    emb_size: int = 32
+    lr: float = 5e-4
+    device: str = "cuda"
+
+    def __post_init__(self):
+        self.model = CPCModel(self.num_action, self.emb_size, self.frame_stack)
+        self.model = self.model.train().to(self.device)
+        self.optim = ParamOptim(params=self.model.parameters(), lr=self.lr)
+        self.target = torch.arange(self.batch_size * self.unroll).to(self.device)
+
+    def train(self):
+        # burnin = 2, fstack = 4, unroll = 2
+        # idx 0 1 2 3 4 5 6 7
+        # bin p p p b b b
+        #             a a
+        #             hx
+        # rol     p p p o o o
+        #                 a a
+
+        sample_steps = self.frame_stack + self.unroll
+
+        if len(self.buffer) < self.buffer.maxlen:
+            no_prev = set(range(sample_steps))
+        else:
+            no_prev = set(
+                (self.buffer.cursor + i) % self.buffer.maxlen
+                for i in range(sample_steps)
+            )
+        all_idx = list(set(range(len(self.buffer))) - no_prev)
+        idx0 = torch.tensor(random.choices(all_idx, k=self.batch_size))
+        idx1 = torch.tensor(
+            random.choices(range(self.buffer.num_env), k=self.batch_size)
