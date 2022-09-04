@@ -11,4 +11,7 @@ from dqn.prepare_obs import prepare_obs
 
 
 @dataclass
-cla
+class IDF:
+    buffer: Buffer
+    num_action: int
+    emb_size: i
