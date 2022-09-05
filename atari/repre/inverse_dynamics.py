@@ -14,4 +14,6 @@ from dqn.prepare_obs import prepare_obs
 class IDF:
     buffer: Buffer
     num_action: int
-    emb_size: i
+    emb_size: int = 32
+    batch_size: int = 256
+    lr: float = 5e
