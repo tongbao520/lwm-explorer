@@ -16,4 +16,6 @@ class IDF:
     num_action: int
     emb_size: int = 32
     batch_size: int = 256
-    lr: float = 5e
+    lr: float = 5e-4
+    frame_stack: int = 1
+    device: str = "cu
