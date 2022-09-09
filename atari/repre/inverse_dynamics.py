@@ -18,4 +18,7 @@ class IDF:
     batch_size: int = 256
     lr: float = 5e-4
     frame_stack: int = 1
-    device: str = "cu
+    device: str = "cuda"
+
+    def __post_init__(self):
+        self.encoder = mn
