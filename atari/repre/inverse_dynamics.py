@@ -21,4 +21,5 @@ class IDF:
     device: str = "cuda"
 
     def __post_init__(self):
-        self.encoder = mn
+        self.encoder = mnih_cnn(self.frame_stack, self.emb_size)
+        self.encoder
