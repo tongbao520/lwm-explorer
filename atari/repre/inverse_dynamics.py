@@ -22,4 +22,5 @@ class IDF:
 
     def __post_init__(self):
         self.encoder = mnih_cnn(self.frame_stack, self.emb_size)
-        self.encoder
+        self.encoder = self.encoder.to(self.device).train()
+        s
