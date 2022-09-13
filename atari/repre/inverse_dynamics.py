@@ -24,4 +24,6 @@ class IDF:
         self.encoder = mnih_cnn(self.frame_stack, self.emb_size)
         self.encoder = self.encoder.to(self.device).train()
         self.clf = nn.Sequential(
-            nn.Linea
+            nn.Linear(self.emb_size * 2, 128),
+            nn.ReLU(),
+    
