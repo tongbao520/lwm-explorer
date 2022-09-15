@@ -28,4 +28,5 @@ class IDF:
             nn.ReLU(),
             nn.Linear(128, self.num_action),
         )
-        self.cl
+        self.clf = self.clf.to(self.device).train()
+        params = chai
