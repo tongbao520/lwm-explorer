@@ -29,4 +29,5 @@ class IDF:
             nn.Linear(128, self.num_action),
         )
         self.clf = self.clf.to(self.device).train()
-        params = chai
+        params = chain(self.encoder.parameters(), self.clf.parameters())
+        self.optim
