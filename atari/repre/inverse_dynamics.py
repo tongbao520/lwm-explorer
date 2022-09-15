@@ -26,4 +26,6 @@ class IDF:
         self.clf = nn.Sequential(
             nn.Linear(self.emb_size * 2, 128),
             nn.ReLU(),
-    
+            nn.Linear(128, self.num_action),
+        )
+        self.cl
