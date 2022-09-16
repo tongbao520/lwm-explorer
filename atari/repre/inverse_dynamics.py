@@ -30,4 +30,4 @@ class IDF:
         )
         self.clf = self.clf.to(self.device).train()
         params = chain(self.encoder.parameters(), self.clf.parameters())
-        self.optim
+        self.optim = ParamOptim(lr=self.lr, params=params)
