@@ -34,4 +34,7 @@ class IDF:
 
     def train(self):
         # 0 1 2 3 4
-        
+        # p p p o o
+        #         a
+
+        sample_steps = sel
