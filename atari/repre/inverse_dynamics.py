@@ -37,4 +37,5 @@ class IDF:
         # p p p o o
         #         a
 
-        sample_steps = sel
+        sample_steps = self.frame_stack + 1
+        if len(self.buffer) < sel
