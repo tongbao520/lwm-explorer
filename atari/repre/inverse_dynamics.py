@@ -31,3 +31,7 @@ class IDF:
         self.clf = self.clf.to(self.device).train()
         params = chain(self.encoder.parameters(), self.clf.parameters())
         self.optim = ParamOptim(lr=self.lr, params=params)
+
+    def train(self):
+        # 0 1 2 3 4
+        
