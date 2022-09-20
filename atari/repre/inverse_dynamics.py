@@ -39,4 +39,6 @@ class IDF:
 
         sample_steps = self.frame_stack + 1
         if len(self.buffer) < self.buffer.maxlen:
-            no_prev = set(rang
+            no_prev = set(range(sample_steps))
+        else:
+            no_prev = se
