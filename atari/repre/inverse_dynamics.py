@@ -41,4 +41,5 @@ class IDF:
         if len(self.buffer) < self.buffer.maxlen:
             no_prev = set(range(sample_steps))
         else:
-            no_prev = se
+            no_prev = set(
+                (self.buffer.cursor + i) % 
