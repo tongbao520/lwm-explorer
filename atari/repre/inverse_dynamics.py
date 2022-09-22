@@ -43,4 +43,6 @@ class IDF:
         else:
             no_prev = set(
                 (self.buffer.cursor + i) % self.buffer.maxlen
-                for i in range
+                for i in range(sample_steps)
+            )
+        all_idx = list
