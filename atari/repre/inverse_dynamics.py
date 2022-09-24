@@ -46,4 +46,4 @@ class IDF:
                 for i in range(sample_steps)
             )
         all_idx = list(set(range(len(self.buffer))) - no_prev)
-        i
+        idx0 = torch.tensor(random.choices(all_idx, k
