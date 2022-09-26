@@ -50,4 +50,5 @@ class IDF:
         idx1 = torch.tensor(
             random.choices(range(self.buffer.num_env), k=self.batch_size)
         )
-        batch = self.bu
+        batch = self.buffer.query(idx0, idx1, sample_steps)
+        obs = prepa
