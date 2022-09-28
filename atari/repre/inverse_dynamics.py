@@ -54,4 +54,5 @@ class IDF:
         obs = prepare_obs(batch["obs"], batch["done"], self.frame_stack)
         action = batch["action"][-1, :, 0]
 
-        x0, x
+        x0, x1 = self.encoder(obs[0]), self.encoder(obs[1])
+     
