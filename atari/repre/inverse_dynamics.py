@@ -55,4 +55,6 @@ class IDF:
         action = batch["action"][-1, :, 0]
 
         x0, x1 = self.encoder(obs[0]), self.encoder(obs[1])
-     
+        x = torch.cat([x0, x1], dim=-1)
+        y = self.clf(relu(x))
+ 
