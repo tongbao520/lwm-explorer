@@ -51,4 +51,7 @@ class IDF:
             random.choices(range(self.buffer.num_env), k=self.batch_size)
         )
         batch = self.buffer.query(idx0, idx1, sample_steps)
-        obs = prepare_obs(batch["obs"], batch["done"], self.fr
+        obs = prepare_obs(batch["obs"], batch["done"], self.frame_stack)
+        action = batch["action"][-1, :, 0]
+
+        x0, x
