@@ -58,3 +58,4 @@ class IDF:
         x = torch.cat([x0, x1], dim=-1)
         y = self.clf(relu(x))
         loss_idf = cross_entropy(y, action)
+        acc_idf = (y.argmax(-1) == action).float
