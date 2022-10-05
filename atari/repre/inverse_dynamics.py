@@ -61,4 +61,4 @@ class IDF:
         acc_idf = (y.argmax(-1) == action).float().mean()
 
         self.optim.step(loss_idf)
-    
+        return {"loss_idf": loss_idf, "acc_idf": acc_idf}
