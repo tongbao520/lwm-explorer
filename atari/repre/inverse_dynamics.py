@@ -64,4 +64,5 @@ class IDF:
         return {"loss_idf": loss_idf, "acc_idf": acc_idf}
 
     def load(self):
-        cp = torch.load("
+        cp = torch.load("models/idf.pt", map_location=self.device)
+       
