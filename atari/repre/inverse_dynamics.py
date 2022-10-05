@@ -65,4 +65,5 @@ class IDF:
 
     def load(self):
         cp = torch.load("models/idf.pt", map_location=self.device)
-       
+        self.encoder.load_state_dict(cp[0])
+        self.clf.l
