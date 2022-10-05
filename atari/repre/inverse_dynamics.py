@@ -62,3 +62,6 @@ class IDF:
 
         self.optim.step(loss_idf)
         return {"loss_idf": loss_idf, "acc_idf": acc_idf}
+
+    def load(self):
+        cp = torch.load("
