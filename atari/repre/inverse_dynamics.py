@@ -70,4 +70,4 @@ class IDF:
 
     def save(self):
         cp = [self.encoder.state_dict(), self.clf.state_dict()]
-    
+        torch.save(cp, "models/idf.pt")
