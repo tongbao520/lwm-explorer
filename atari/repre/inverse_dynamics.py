@@ -69,4 +69,5 @@ class IDF:
         self.clf.load_state_dict(cp[1])
 
     def save(self):
-        cp = [self.
+        cp = [self.encoder.state_dict(), self.clf.state_dict()]
+    
