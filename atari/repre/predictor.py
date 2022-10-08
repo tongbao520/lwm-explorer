@@ -6,3 +6,5 @@ from common.optim import ParamOptim
 from dqn.prepare_obs import prepare_obs
 
 
+class PredictorModel(nn.Module):
+    def __init__(self,
