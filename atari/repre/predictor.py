@@ -8,4 +8,5 @@ from dqn.prepare_obs import prepare_obs
 
 class PredictorModel(nn.Module):
     def __init__(self, num_action, fstack, emb_size, rnn_size):
-        super(P
+        super(PredictorModel, self).__init__()
+        self.fstack
