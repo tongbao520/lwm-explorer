@@ -11,3 +11,5 @@ class PredictorModel(nn.Module):
         super(PredictorModel, self).__init__()
         self.fstack = fstack
         self.num_action = num_action
+        self.rnn_size = rnn_size
+        self.
