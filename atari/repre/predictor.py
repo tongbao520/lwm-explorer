@@ -12,4 +12,5 @@ class PredictorModel(nn.Module):
         self.fstack = fstack
         self.num_action = num_action
         self.rnn_size = rnn_size
+        self.emb_fc = nn.Linear(emb_size + num_action, 128)
         self.
