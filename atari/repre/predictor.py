@@ -13,4 +13,5 @@ class PredictorModel(nn.Module):
         self.num_action = num_action
         self.rnn_size = rnn_size
         self.emb_fc = nn.Linear(emb_size + num_action, 128)
-        self.
+        self.rnn = nn.GRUCell(128, rnn_size)
+        self.f
