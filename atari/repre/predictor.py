@@ -19,4 +19,5 @@ class PredictorModel(nn.Module):
         )
 
     def forward(self, z, action, done, hx=None):
-        unrol
+        unroll, batch, emb_size = z.shape
+        a = one_hot(action
