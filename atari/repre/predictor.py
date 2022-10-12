@@ -18,4 +18,5 @@ class PredictorModel(nn.Module):
             nn.Linear(rnn_size, rnn_size), nn.ReLU(), nn.Linear(rnn_size, emb_size),
         )
 
-    def forward(self, z, action,
+    def forward(self, z, action, done, hx=None):
+        unrol
