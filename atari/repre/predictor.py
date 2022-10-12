@@ -15,4 +15,7 @@ class PredictorModel(nn.Module):
         self.emb_fc = nn.Linear(emb_size + num_action, 128)
         self.rnn = nn.GRUCell(128, rnn_size)
         self.fc = nn.Sequential(
-            nn.Linear(rnn_size, rnn_size), nn.ReLU(), nn.Linear(rnn_siz
+            nn.Linear(rnn_size, rnn_size), nn.ReLU(), nn.Linear(rnn_size, emb_size),
+        )
+
+    def forward(self, z, action,
