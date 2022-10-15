@@ -25,3 +25,5 @@ class PredictorModel(nn.Module):
         z = self.emb_fc(z.view(unroll * batch, (emb_size + self.num_action)))
         z = z.view(unroll, batch, 128)
 
+        mask = 1 - done.float()
+        x = torch.empty(un
