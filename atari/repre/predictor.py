@@ -26,4 +26,6 @@ class PredictorModel(nn.Module):
         z = z.view(unroll, batch, 128)
 
         mask = 1 - done.float()
-        x = torch.empty(unroll, batch, self.rnn_size, device=z.device
+        x = torch.empty(unroll, batch, self.rnn_size, device=z.device)
+        for i in range(unroll):
+            if hx
