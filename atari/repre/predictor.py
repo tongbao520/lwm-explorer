@@ -31,4 +31,5 @@ class PredictorModel(nn.Module):
             if hx is not None:
                 hx *= mask[i]
             x[i] = hx = self.rnn(z[i], hx)
-        hx = hx.clone()
+        hx = hx.clone().detach()
+        x = self.fc(x.view(unroll * batch, self.rnn_size
