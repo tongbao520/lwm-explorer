@@ -32,4 +32,5 @@ class PredictorModel(nn.Module):
                 hx *= mask[i]
             x[i] = hx = self.rnn(z[i], hx)
         hx = hx.clone().detach()
-        x = self.fc(x.view(unroll * batch, self.rnn_size
+        x = self.fc(x.view(unroll * batch, self.rnn_size))
+        z_pred = x.view(unroll, batch, emb_si
