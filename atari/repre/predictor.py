@@ -37,4 +37,5 @@ class PredictorModel(nn.Module):
         return z_pred, hx
 
 
-class Predicto
+class Predictor:
+    def __init__(self, buffer, encoder, nu
