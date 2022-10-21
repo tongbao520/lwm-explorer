@@ -41,4 +41,6 @@ class Predictor:
     def __init__(self, buffer, encoder, num_action, cfg, device="cuda"):
         self.device = device
         self.buffer = buffer
-        self.encoder = enco
+        self.encoder = encoder
+
+        self.frame_stack = cfg["w_mse"]["fram
