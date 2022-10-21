@@ -43,4 +43,5 @@ class Predictor:
         self.buffer = buffer
         self.encoder = encoder
 
-        self.frame_stack = cfg["w_mse"]["fram
+        self.frame_stack = cfg["w_mse"]["frame_stack"]
+        self.emb_size = cfg["w_mse"]["emb
