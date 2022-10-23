@@ -48,4 +48,4 @@ class Predictor:
         self.rnn_size = cfg["w_mse"]["rnn_size"]
 
         self.model = PredictorModel(
-      
+            num_action, self.frame_stack, self
