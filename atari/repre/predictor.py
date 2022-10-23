@@ -45,4 +45,7 @@ class Predictor:
 
         self.frame_stack = cfg["w_mse"]["frame_stack"]
         self.emb_size = cfg["w_mse"]["emb_size"]
-        self.rnn_size = cfg["w_mse"]["rnn_size"
+        self.rnn_size = cfg["w_mse"]["rnn_size"]
+
+        self.model = PredictorModel(
+      
