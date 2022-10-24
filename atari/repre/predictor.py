@@ -50,4 +50,5 @@ class Predictor:
         self.model = PredictorModel(
             num_action, self.frame_stack, self.emb_size, self.rnn_size
         )
-        self.mo
+        self.model = self.model.to(device).train()
+        lr = 
