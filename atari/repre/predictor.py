@@ -51,4 +51,5 @@ class Predictor:
             num_action, self.frame_stack, self.emb_size, self.rnn_size
         )
         self.model = self.model.to(device).train()
-        lr = 
+        lr = cfg["w_mse"]["lr"]
+        self.optim = ParamOptim(params=
