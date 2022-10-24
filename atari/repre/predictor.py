@@ -52,4 +52,5 @@ class Predictor:
         )
         self.model = self.model.to(device).train()
         lr = cfg["w_mse"]["lr"]
-        self.optim = ParamOptim(params=
+        self.optim = ParamOptim(params=self.model.parameters(), lr=lr)
+        self.ri_m
