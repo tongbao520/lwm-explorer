@@ -54,4 +54,5 @@ class Predictor:
         lr = cfg["w_mse"]["lr"]
         self.optim = ParamOptim(params=self.model.parameters(), lr=lr)
         self.ri_mean = self.ri_std = None
-        self.ri_momentum 
+        self.ri_momentum = cfg["w_mse"]["ri_momentum"]
+        self.ri_clamp =
