@@ -56,4 +56,6 @@ class Predictor:
         self.ri_mean = self.ri_std = None
         self.ri_momentum = cfg["w_mse"]["ri_momentum"]
         self.ri_clamp = cfg["w_mse"].get("ri_clamp")
-        self.ri_scale = cfg["ri
+        self.ri_scale = cfg["ri_scale"]
+
+    def get_error(self, batch, hx=None, u
