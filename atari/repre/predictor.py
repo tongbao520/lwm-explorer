@@ -61,4 +61,5 @@ class Predictor:
     def get_error(self, batch, hx=None, update_stats=False):
         # p p p o o o
         #         a a
-        obs = prepare_
+        obs = prepare_obs(batch["obs"], batch["done"], self.frame_stack)
+   
