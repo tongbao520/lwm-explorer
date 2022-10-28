@@ -59,4 +59,6 @@ class Predictor:
         self.ri_scale = cfg["ri_scale"]
 
     def get_error(self, batch, hx=None, update_stats=False):
-        # p p 
+        # p p p o o o
+        #         a a
+        obs = prepare_
