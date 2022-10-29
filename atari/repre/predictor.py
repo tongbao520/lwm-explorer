@@ -66,4 +66,6 @@ class Predictor:
         obs = obs.view(batch_size * steps, *obs_shape)
         with torch.no_grad():
             z = self.encoder(obs)
-        z = z.view(steps, batch_s
+        z = z.view(steps, batch_size, self.emb_size)
+
+        action = batch["action"
