@@ -64,4 +64,5 @@ class Predictor:
         obs = prepare_obs(batch["obs"], batch["done"], self.frame_stack)
         steps, batch_size, *obs_shape = obs.shape
         obs = obs.view(batch_size * steps, *obs_shape)
-        w
+        with torch.no_grad():
+            z = self.enc
