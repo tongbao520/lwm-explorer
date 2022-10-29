@@ -63,4 +63,5 @@ class Predictor:
         #         a a
         obs = prepare_obs(batch["obs"], batch["done"], self.frame_stack)
         steps, batch_size, *obs_shape = obs.shape
-        obs = o
+        obs = obs.view(batch_size * steps, *obs_shape)
+        w
