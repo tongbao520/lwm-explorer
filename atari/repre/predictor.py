@@ -69,4 +69,5 @@ class Predictor:
         z = z.view(steps, batch_size, self.emb_size)
 
         action = batch["action"][self.frame_stack :]
-        done = batch[
+        done = batch["done"][self.frame_stack - 1 : -1]
+        z_pred, hx =
