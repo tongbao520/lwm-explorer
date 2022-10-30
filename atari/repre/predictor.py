@@ -68,4 +68,5 @@ class Predictor:
             z = self.encoder(obs)
         z = z.view(steps, batch_size, self.emb_size)
 
-        action = batch["action"
+        action = batch["action"][self.frame_stack :]
+        done = batch[
