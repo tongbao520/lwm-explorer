@@ -70,4 +70,5 @@ class Predictor:
 
         action = batch["action"][self.frame_stack :]
         done = batch["done"][self.frame_stack - 1 : -1]
-        z_pred, hx =
+        z_pred, hx = self.model(z[:-1], action, done, hx)
+        err = 
