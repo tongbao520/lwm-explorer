@@ -73,4 +73,6 @@ class Predictor:
         z_pred, hx = self.model(z[:-1], action, done, hx)
         err = (z[1:] - z_pred).pow(2).mean(2)
 
-        ri = err.deta
+        ri = err.detach()
+        if update_stats:
+            if self.ri_mean i
