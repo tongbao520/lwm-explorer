@@ -79,4 +79,5 @@ class Predictor:
                 self.ri_mean = ri.mean()
                 self.ri_std = ri.std()
             else:
-        
+                m = self.ri_momentum
+                
