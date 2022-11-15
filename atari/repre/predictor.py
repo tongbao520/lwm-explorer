@@ -85,4 +85,5 @@ class Predictor:
         if self.ri_mean is not None:
             ri = (ri[..., None] - self.ri_mean) / self.ri_std
             if self.ri_clamp is not None:
-                r
+                ri.clamp_(-self.ri_clamp, self.ri_clamp)
+        
