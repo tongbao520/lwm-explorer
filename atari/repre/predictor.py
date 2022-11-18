@@ -88,4 +88,8 @@ class Predictor:
                 ri.clamp_(-self.ri_clamp, self.ri_clamp)
             ri *= self.ri_scale
         else:
-           
+            ri = 0
+        return err, ri, hx
+
+    def train(self):
+ 
