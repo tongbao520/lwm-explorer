@@ -92,4 +92,4 @@ class Predictor:
         return err, ri, hx
 
     def train(self):
- 
+        # this function is used only for pretrain, main t
