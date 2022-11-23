@@ -95,4 +95,5 @@ class Predictor:
         # this function is used only for pretrain, main training loop is in dqn learner
         batch_size = 16
         sample_steps = self.frame_stack - 1 + 100
-      
+        if len(self.buffer) < self.buffer.maxlen:
+            no_pr
