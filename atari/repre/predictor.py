@@ -98,4 +98,5 @@ class Predictor:
         if len(self.buffer) < self.buffer.maxlen:
             no_prev = set(range(sample_steps))
         else:
-        
+            no_prev = set(
+                (self.buffer.cursor + i) 
