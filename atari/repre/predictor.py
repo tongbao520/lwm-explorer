@@ -102,4 +102,5 @@ class Predictor:
                 (self.buffer.cursor + i) % self.buffer.maxlen
                 for i in range(sample_steps)
             )
-        all_idx = lis
+        all_idx = list(set(range(len(self.buffer))) - no_prev)
+      
