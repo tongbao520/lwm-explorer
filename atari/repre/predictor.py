@@ -103,4 +103,5 @@ class Predictor:
                 for i in range(sample_steps)
             )
         all_idx = list(set(range(len(self.buffer))) - no_prev)
-        idx0 = torch.tensor(random.choices(all_idx, k=batch_
+        idx0 = torch.tensor(random.choices(all_idx, k=batch_size))
+        idx1 = torch.tensor(random.choices(range
