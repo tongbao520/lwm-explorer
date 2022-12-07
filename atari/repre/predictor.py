@@ -110,3 +110,6 @@ class Predictor:
         loss = er.sum(0).mean()
         self.optim.step(loss)
         return {"loss_predictor": loss.item()}
+
+    def load(self):
+        cp = torch.load("model
