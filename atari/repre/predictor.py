@@ -108,4 +108,5 @@ class Predictor:
         batch = self.buffer.query(idx0, idx1, sample_steps)
         er = self.get_error(batch, update_stats=True)[0]
         loss = er.sum(0).mean()
-        self.optim.step(lo
+        self.optim.step(loss)
+        return {"loss_predictor": loss.item()}
