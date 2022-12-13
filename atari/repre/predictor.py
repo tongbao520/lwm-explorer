@@ -114,4 +114,7 @@ class Predictor:
     def load(self):
         cp = torch.load("models/predictor.pt", map_location=self.device)
         self.ri_mean, self.ri_std, model = cp
-        self.model.load_
+        self.model.load_state_dict(model)
+
+    def save(self):
+       
