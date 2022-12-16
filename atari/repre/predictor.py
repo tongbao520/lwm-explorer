@@ -118,4 +118,4 @@ class Predictor:
 
     def save(self):
         data = [self.ri_mean, self.ri_std, self.model.state_dict()]
-        torch.save(data, "models
+        torch.save(data, "models/predictor.pt")
