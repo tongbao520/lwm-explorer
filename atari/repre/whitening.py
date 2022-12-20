@@ -8,4 +8,5 @@ class Whitening2d(nn.Module):
         super(Whitening2d, self).__init__()
         self.num_features = num_features
         self.momentum = momentum
-        sel
+        self.track_running_stats = track_running_stats
+     
