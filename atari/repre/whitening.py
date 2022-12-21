@@ -9,4 +9,6 @@ class Whitening2d(nn.Module):
         self.num_features = num_features
         self.momentum = momentum
         self.track_running_stats = track_running_stats
-     
+        self.eps = eps
+
+        if self.track_running_
