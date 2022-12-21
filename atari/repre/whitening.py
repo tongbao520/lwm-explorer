@@ -11,4 +11,6 @@ class Whitening2d(nn.Module):
         self.track_running_stats = track_running_stats
         self.eps = eps
 
-        if self.track_running_
+        if self.track_running_stats:
+            self.register_buffer(
+       
