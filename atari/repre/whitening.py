@@ -13,4 +13,6 @@ class Whitening2d(nn.Module):
 
         if self.track_running_stats:
             self.register_buffer(
-                "running_mean", torch.zeros([1, self.num_features, 1
+                "running_mean", torch.zeros([1, self.num_features, 1, 1])
+            )
+            self.register
