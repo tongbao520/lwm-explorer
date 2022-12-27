@@ -18,4 +18,5 @@ class Whitening2d(nn.Module):
             self.register_buffer("running_variance", torch.eye(self.num_features))
 
     def forward(self, x):
-        x = x.un
+        x = x.unsqueeze(2).unsqueeze(3)
+        m = x.mean(0).view(self.num_feat
