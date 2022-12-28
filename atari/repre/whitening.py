@@ -20,4 +20,4 @@ class Whitening2d(nn.Module):
     def forward(self, x):
         x = x.unsqueeze(2).unsqueeze(3)
         m = x.mean(0).view(self.num_features, -1).mean(-1).view(1, -1, 1, 1)
-        if not 
+        if not self.training and self.track_running_stats:  # 
