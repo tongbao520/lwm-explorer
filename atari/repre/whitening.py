@@ -24,4 +24,5 @@ class Whitening2d(nn.Module):
             m = self.running_mean
         xn = x - m
 
-        T = xn.permute(1
+        T = xn.permute(1, 0, 2, 3).contiguous().view(self.num_features, -1)
+       
