@@ -22,3 +22,6 @@ class Whitening2d(nn.Module):
         m = x.mean(0).view(self.num_features, -1).mean(-1).view(1, -1, 1, 1)
         if not self.training and self.track_running_stats:  # for inference
             m = self.running_mean
+        xn = x - m
+
+        T = xn.permute(1
