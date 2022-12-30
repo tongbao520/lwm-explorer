@@ -25,4 +25,4 @@ class Whitening2d(nn.Module):
         xn = x - m
 
         T = xn.permute(1, 0, 2, 3).contiguous().view(self.num_features, -1)
-       
+        f_cov = torch.mm(T, T.permute(1, 0)) / (T.shape[
