@@ -30,4 +30,6 @@ class Whitening2d(nn.Module):
         eye = torch.eye(self.num_features).type(f_cov.type())
 
         if not self.training and self.track_running_stats:  # for inference
-            f
+            f_cov = self.running_variance
+
+        f_cov_
