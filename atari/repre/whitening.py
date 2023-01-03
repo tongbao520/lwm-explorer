@@ -32,4 +32,6 @@ class Whitening2d(nn.Module):
         if not self.training and self.track_running_stats:  # for inference
             f_cov = self.running_variance
 
-        f_cov_shrinked = (1 - self.eps) * f_cov + se
+        f_cov_shrinked = (1 - self.eps) * f_cov + self.eps * eye
+
+        inv_sqrt = torch.triangular_solve
