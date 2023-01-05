@@ -34,4 +34,5 @@ class Whitening2d(nn.Module):
 
         f_cov_shrinked = (1 - self.eps) * f_cov + self.eps * eye
 
-        inv_sqrt = torch.triangular_solve
+        inv_sqrt = torch.triangular_solve(
+            eye, torch.cholesky(f_cov_shrinked), up
