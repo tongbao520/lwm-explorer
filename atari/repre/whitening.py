@@ -37,4 +37,5 @@ class Whitening2d(nn.Module):
         inv_sqrt = torch.triangular_solve(
             eye, torch.cholesky(f_cov_shrinked), upper=False
         )[0]
-        inv_sqrt = inv_sqrt.contiguous().vi
+        inv_sqrt = inv_sqrt.contiguous().view(
+            self.num_features, self.num_features, 1
