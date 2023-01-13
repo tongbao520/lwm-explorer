@@ -38,4 +38,7 @@ class Whitening2d(nn.Module):
             eye, torch.cholesky(f_cov_shrinked), upper=False
         )[0]
         inv_sqrt = inv_sqrt.contiguous().view(
-            self.num_features, self.num_features, 1
+            self.num_features, self.num_features, 1, 1
+        )
+
+        decorrelated = conv2d(xn,
