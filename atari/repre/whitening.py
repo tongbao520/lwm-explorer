@@ -41,4 +41,6 @@ class Whitening2d(nn.Module):
             self.num_features, self.num_features, 1, 1
         )
 
-        decorrelated = conv2d(xn,
+        decorrelated = conv2d(xn, inv_sqrt)
+
+        if self.training and self.tra
