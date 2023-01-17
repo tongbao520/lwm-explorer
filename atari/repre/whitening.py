@@ -44,4 +44,6 @@ class Whitening2d(nn.Module):
         decorrelated = conv2d(xn, inv_sqrt)
 
         if self.training and self.track_running_stats:
-            self.running_mea
+            self.running_mean = torch.add(
+                self.momentum * m.detach(),
+    
