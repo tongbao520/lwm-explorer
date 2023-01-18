@@ -46,4 +46,5 @@ class Whitening2d(nn.Module):
         if self.training and self.track_running_stats:
             self.running_mean = torch.add(
                 self.momentum * m.detach(),
-    
+                (1 - self.momentum) * self.running_mean,
+        
