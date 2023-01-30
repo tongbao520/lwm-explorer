@@ -47,4 +47,6 @@ class Whitening2d(nn.Module):
             self.running_mean = torch.add(
                 self.momentum * m.detach(),
                 (1 - self.momentum) * self.running_mean,
-        
+                out=self.running_mean,
+            )
+    
