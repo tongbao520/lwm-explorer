@@ -50,3 +50,5 @@ class Whitening2d(nn.Module):
                 out=self.running_mean,
             )
             self.running_variance = torch.add(
+                self.momentum * f_cov.detach(),
+     
