@@ -55,4 +55,6 @@ class Whitening2d(nn.Module):
                 out=self.running_variance,
             )
 
-        return decorrelated.sque
+        return decorrelated.squeeze(2).squeeze(2)
+
+    def extra_repr(self):
