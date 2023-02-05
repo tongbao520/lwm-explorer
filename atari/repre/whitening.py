@@ -58,4 +58,5 @@ class Whitening2d(nn.Module):
         return decorrelated.squeeze(2).squeeze(2)
 
     def extra_repr(self):
-        return "features={}, eps={},
+        return "features={}, eps={}, momentum={}".format(
+            self.num_featur
