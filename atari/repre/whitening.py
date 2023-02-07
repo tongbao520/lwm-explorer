@@ -59,4 +59,5 @@ class Whitening2d(nn.Module):
 
     def extra_repr(self):
         return "features={}, eps={}, momentum={}".format(
-            self.num_featur
+            self.num_features, self.eps, self.momentum
+        )
