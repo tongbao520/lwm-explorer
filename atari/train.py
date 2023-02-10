@@ -6,4 +6,5 @@ import wandb
 from dqn.buffer import Buffer
 from common.load_cfg import load_cfg
 from atari import make_vec_envs
-from
+from dqn import actor_iter, Learner, DQN
+from repre.w_mse im
