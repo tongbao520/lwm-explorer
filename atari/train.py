@@ -8,4 +8,8 @@ from common.load_cfg import load_cfg
 from atari import make_vec_envs
 from dqn import actor_iter, Learner, DQN
 from repre.w_mse import WMSE
-from repre.predictor import Predicto
+from repre.predictor import Predictor
+
+
+if __name__ == "__main__":
+    parser = argpar
