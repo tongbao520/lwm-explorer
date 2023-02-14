@@ -13,4 +13,5 @@ from repre.predictor import Predictor
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="")
-    parser.add_argu
+    parser.add_argument("--cfg", type=str, default="default")
+    pa
