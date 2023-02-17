@@ -14,4 +14,5 @@ from repre.predictor import Predictor
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="")
     parser.add_argument("--cfg", type=str, default="default")
-    parser.add_argument("--env", type=str, default="Montez
+    parser.add_argument("--env", type=str, default="MontezumaRevenge")
+    parser.add_argument("--seed", 
