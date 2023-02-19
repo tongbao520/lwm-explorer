@@ -16,4 +16,6 @@ if __name__ == "__main__":
     parser.add_argument("--cfg", type=str, default="default")
     parser.add_argument("--env", type=str, default="MontezumaRevenge")
     parser.add_argument("--seed", type=int, default=0)
-    parser.add_argument("--ri_scal
+    parser.add_argument("--ri_scale", type=float, default=1)
+    p = parser.parse_args()
+    cfg 
