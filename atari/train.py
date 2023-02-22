@@ -20,4 +20,6 @@ if __name__ == "__main__":
     p = parser.parse_args()
     cfg = load_cfg(p.cfg)
     cfg.update(vars(p))
-   
+    wandb.init(project="lwm", config=cfg)
+
+    num_env = cf
