@@ -22,4 +22,5 @@ if __name__ == "__main__":
     cfg.update(vars(p))
     wandb.init(project="lwm", config=cfg)
 
-    num_env = cf
+    num_env = cfg["agent"]["actors"]
+    fstack = cfg["agent"]["frame_stack
