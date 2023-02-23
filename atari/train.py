@@ -23,4 +23,5 @@ if __name__ == "__main__":
     wandb.init(project="lwm", config=cfg)
 
     num_env = cfg["agent"]["actors"]
-    fstack = cfg["agent"]["frame_stack
+    fstack = cfg["agent"]["frame_stack"]
+    envs = make_vec_envs(cfg["env"], num_env, cfg["s
