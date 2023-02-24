@@ -24,4 +24,6 @@ if __name__ == "__main__":
 
     num_env = cfg["agent"]["actors"]
     fstack = cfg["agent"]["frame_stack"]
-    envs = make_vec_envs(cfg["env"], num_env, cfg["s
+    envs = make_vec_envs(cfg["env"], num_env, cfg["seed"], cfg["train"]["max_ep_len"])
+
+   
