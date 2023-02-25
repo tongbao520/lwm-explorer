@@ -26,4 +26,5 @@ if __name__ == "__main__":
     fstack = cfg["agent"]["frame_stack"]
     envs = make_vec_envs(cfg["env"], num_env, cfg["seed"], cfg["train"]["max_ep_len"])
 
-   
+    buffer = Buffer(
+        num_env=num_env,
