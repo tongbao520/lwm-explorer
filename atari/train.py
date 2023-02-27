@@ -28,3 +28,4 @@ if __name__ == "__main__":
 
     buffer = Buffer(
         num_env=num_env,
+        maxlen=int(cfg["buffer"]["size"] / num_env
