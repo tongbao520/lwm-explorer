@@ -32,4 +32,4 @@ if __name__ == "__main__":
         obs_shape=envs.observation_space.shape,
         device=cfg["buffer"]["device"],
     )
-    model = DQN(
+    model = DQN(envs.action_space.n, fstack).cuda().train()
