@@ -33,3 +33,5 @@ if __name__ == "__main__":
         device=cfg["buffer"]["device"],
     )
     model = DQN(envs.action_space.n, fstack).cuda().train()
+    wmse = WMSE(buffer, cfg)
+    pred = Predictor(buffer, 
