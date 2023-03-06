@@ -35,4 +35,5 @@ if __name__ == "__main__":
     model = DQN(envs.action_space.n, fstack).cuda().train()
     wmse = WMSE(buffer, cfg)
     pred = Predictor(buffer, wmse.encoder, envs.action_space.n, cfg)
-    learner =
+    learner = Learner(model, buffer, pred, cfg)
+    actor = a
