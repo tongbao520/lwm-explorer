@@ -37,4 +37,7 @@ if __name__ == "__main__":
     pred = Predictor(buffer, wmse.encoder, envs.action_space.n, cfg)
     learner = Learner(model, buffer, pred, cfg)
     actor = actor_iter(
-        envs, model, pred, cfg["buffer"][
+        envs, model, pred, cfg["buffer"]["warmup"], eps=cfg["agent"].get("eps")
+    )
+
+    s
