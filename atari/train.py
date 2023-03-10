@@ -40,4 +40,4 @@ if __name__ == "__main__":
         envs, model, pred, cfg["buffer"]["warmup"], eps=cfg["agent"].get("eps")
     )
 
-    s
+    start_train = int(cfg["buffer"]["warmup"] / 
