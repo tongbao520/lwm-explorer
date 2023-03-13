@@ -42,4 +42,6 @@ if __name__ == "__main__":
 
     start_train = int(cfg["buffer"]["warmup"] / num_env)
     log_every = cfg["train"]["log_every"]
-    train_every = cfg["train"]["learner_eve
+    train_every = cfg["train"]["learner_every"]
+    wmse_every = cfg["train"]["w_mse_every"]
+
