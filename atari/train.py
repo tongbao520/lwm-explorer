@@ -46,4 +46,6 @@ if __name__ == "__main__":
     wmse_every = cfg["train"]["w_mse_every"]
 
     def save():
-        torch.save(model.stat
+        torch.save(model.state_dict(), "models/dqn.pt")
+        wmse.save()
+        p
