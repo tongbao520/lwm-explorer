@@ -45,3 +45,5 @@ if __name__ == "__main__":
     train_every = cfg["train"]["learner_every"]
     wmse_every = cfg["train"]["w_mse_every"]
 
+    def save():
+        torch.save(model.stat
