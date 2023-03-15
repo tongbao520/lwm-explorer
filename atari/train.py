@@ -48,4 +48,6 @@ if __name__ == "__main__":
     def save():
         torch.save(model.state_dict(), "models/dqn.pt")
         wmse.save()
-        p
+        pred.save()
+
+    count = trange(int(cfg["train"]["frame
