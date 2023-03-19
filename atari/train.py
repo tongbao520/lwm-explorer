@@ -50,4 +50,5 @@ if __name__ == "__main__":
         wmse.save()
         pred.save()
 
-    count = trange(int(cfg["train"]["frame
+    count = trange(int(cfg["train"]["frames"] / 4 / num_env), smoothing=0.05)
+    for n
