@@ -51,4 +51,6 @@ if __name__ == "__main__":
         pred.save()
 
     count = trange(int(cfg["train"]["frames"] / 4 / num_env), smoothing=0.05)
-    for n
+    for n_iter in count:
+        full_step = buffer.get_recent(fstack + 1)
+  
