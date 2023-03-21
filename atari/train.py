@@ -54,4 +54,6 @@ if __name__ == "__main__":
     for n_iter in count:
         full_step = buffer.get_recent(fstack + 1)
         step, hx, log = actor.send(full_step)
-   
+        learner.append(step, hx, n_iter)
+
+        if n_iter
