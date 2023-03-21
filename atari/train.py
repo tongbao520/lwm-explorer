@@ -53,4 +53,5 @@ if __name__ == "__main__":
     count = trange(int(cfg["train"]["frames"] / 4 / num_env), smoothing=0.05)
     for n_iter in count:
         full_step = buffer.get_recent(fstack + 1)
-  
+        step, hx, log = actor.send(full_step)
+   
