@@ -56,4 +56,5 @@ if __name__ == "__main__":
         step, hx, log = actor.send(full_step)
         learner.append(step, hx, n_iter)
 
-        if n_iter
+        if n_iter == start_train:
+            for i in tran
