@@ -59,4 +59,5 @@ if __name__ == "__main__":
         if n_iter == start_train:
             for i in trange(10000):
                 cur_log = wmse.train()
-  
+                if i % 100 == 0:
+                   
