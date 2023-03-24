@@ -57,4 +57,6 @@ if __name__ == "__main__":
         learner.append(step, hx, n_iter)
 
         if n_iter == start_train:
-            for i in tran
+            for i in trange(10000):
+                cur_log = wmse.train()
+  
