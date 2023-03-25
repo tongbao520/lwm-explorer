@@ -60,4 +60,5 @@ if __name__ == "__main__":
             for i in trange(10000):
                 cur_log = wmse.train()
                 if i % 100 == 0:
-                   
+                    wandb.log(cur_log)
+            for i in trange(5000):
