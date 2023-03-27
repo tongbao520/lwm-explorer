@@ -65,3 +65,7 @@ if __name__ == "__main__":
                 cur_log = pred.train()
                 if i % 100 == 0:
                     wandb.log(cur_log)
+            wmse.save()
+            pred.save()
+
+     
