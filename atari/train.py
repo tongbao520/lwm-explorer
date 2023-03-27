@@ -63,4 +63,5 @@ if __name__ == "__main__":
                     wandb.log(cur_log)
             for i in trange(5000):
                 cur_log = pred.train()
-                if i
+                if i % 100 == 0:
+                    wandb.log(cur_log)
