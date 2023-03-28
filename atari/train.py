@@ -68,4 +68,6 @@ if __name__ == "__main__":
             wmse.save()
             pred.save()
 
-        if n_iter > start_train and (n_iter + 1) % tra
+        if n_iter > start_train and (n_iter + 1) % train_every == 0:
+            cur_log = learner.train()
+          
