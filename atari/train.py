@@ -70,4 +70,5 @@ if __name__ == "__main__":
 
         if n_iter > start_train and (n_iter + 1) % train_every == 0:
             cur_log = learner.train()
-          
+            if (n_iter + 1) % log_every < train_every:
+           
