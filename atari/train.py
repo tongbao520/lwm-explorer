@@ -74,4 +74,5 @@ if __name__ == "__main__":
                 log.update(cur_log)
 
         if n_iter > start_train and (n_iter + 1) % wmse_every == 0:
-            cur
+            cur_log = wmse.train()
+            if (n_iter + 1) % log_
