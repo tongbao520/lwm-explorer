@@ -78,4 +78,5 @@ if __name__ == "__main__":
             if (n_iter + 1) % log_every < wmse_every:
                 log.update(cur_log)
 
- 
+        if len(log):
+            wandb.log({"frame": n_iter * num
