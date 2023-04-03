@@ -81,4 +81,6 @@ if __name__ == "__main__":
         if len(log):
             wandb.log({"frame": n_iter * num_env * 4, **log})
 
-        if (n_iter + 1) % cf
+        if (n_iter + 1) % cfg["train"]["checkpoint_every"] == 0:
+            save()
+ 
