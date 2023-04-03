@@ -79,4 +79,6 @@ if __name__ == "__main__":
                 log.update(cur_log)
 
         if len(log):
-            wandb.log({"frame": n_iter * num
+            wandb.log({"frame": n_iter * num_env * 4, **log})
+
+        if (n_iter + 1) % cf
