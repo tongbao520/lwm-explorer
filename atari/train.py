@@ -83,4 +83,4 @@ if __name__ == "__main__":
 
         if (n_iter + 1) % cfg["train"]["checkpoint_every"] == 0:
             save()
- 
+    save()
