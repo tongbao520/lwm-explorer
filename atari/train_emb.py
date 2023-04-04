@@ -48,3 +48,18 @@ if __name__ == "__main__":
         cur_log = wmse.train()
         if i % 200 == 0:
             wandb.log(cur_log)
+    torch.save(wmse.encoder.state_dict(), "models/conv_wmse.pt")
+
+    # batch = 256
+    for i in trange(20000):
+        cur_log = idf.train()
+        if i % 200 == 0:
+            wandb.log(cur_log)
+    torch.save(idf.encoder.state_dict(), "models/conv_idf.pt")
+
+    # batch = 32 * 32
+    for i in trange(5000):
+        cur_log = cpc.train()
+        if i % 50 == 0:
+            wandb.log(cur_log)
+    torch.save(cpc.model.conv.state_dict(), "models/conv_cpc.pt")
