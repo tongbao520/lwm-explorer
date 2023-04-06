@@ -3,4 +3,5 @@ import yaml
 
 
 def replace_e_float(d):
-    p = re.co
+    p = re.compile(r"^-?\d+(\.\d+)?e-?\d+$")
+    for name, val 
