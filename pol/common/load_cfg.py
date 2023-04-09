@@ -12,4 +12,5 @@ def replace_e_float(d):
 
 
 def load_cfg(name, prefix="."):
-    with open(f"{pref
+    with open(f"{prefix}/{name}.yaml") as f:
+        cfg = yaml.load(f, Load
