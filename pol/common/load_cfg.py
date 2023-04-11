@@ -15,4 +15,4 @@ def load_cfg(name, prefix="."):
     with open(f"{prefix}/{name}.yaml") as f:
         cfg = yaml.load(f, Loader=yaml.SafeLoader)
         replace_e_float(cfg)
-   
+        return cfg
