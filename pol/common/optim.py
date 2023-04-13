@@ -7,4 +7,6 @@ from torch.optim import Adam
 
 @dataclass
 class ParamOptim:
-    params: Lis
+    params: List[torch.Tensor]
+    lr: float = 1e-3
+    eps: float = 
