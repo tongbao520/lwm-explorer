@@ -13,4 +13,7 @@ class ParamOptim:
     clip_grad: float = None
 
     def __post_init__(self):
-        self.optim = Adam(self.params, l
+        self.optim = Adam(self.params, lr=self.lr, eps=self.eps)
+
+    def scale_lr(self, k):
+    
