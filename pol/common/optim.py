@@ -16,4 +16,5 @@ class ParamOptim:
         self.optim = Adam(self.params, lr=self.lr, eps=self.eps)
 
     def scale_lr(self, k):
-    
+        for pg in self.optim.param_groups:
+          
