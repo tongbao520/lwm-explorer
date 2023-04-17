@@ -17,4 +17,7 @@ class ParamOptim:
 
     def scale_lr(self, k):
         for pg in self.optim.param_groups:
-          
+            pg["lr"] = self.lr * k
+
+    def step(self, loss):
+    
