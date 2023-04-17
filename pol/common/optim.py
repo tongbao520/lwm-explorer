@@ -20,4 +20,6 @@ class ParamOptim:
             pg["lr"] = self.lr * k
 
     def step(self, loss):
-    
+        self.optim.zero_grad()
+        loss.backward()
+ 
