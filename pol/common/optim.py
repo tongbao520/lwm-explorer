@@ -24,4 +24,5 @@ class ParamOptim:
         loss.backward()
         if self.clip_grad is not None:
             clip_grad_norm_(self.params, self.clip_grad)
-        sel
+        self.optim.step()
+        return loss
