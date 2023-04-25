@@ -1,2 +1,6 @@
 from time import time
-from collecti
+from collections import defaultdict
+import numpy as np
+
+
+def timer_log(num
