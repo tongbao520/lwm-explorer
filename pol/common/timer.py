@@ -10,4 +10,6 @@ def timer_log(num_iter=1000):
     while True:
         prev_t, prev_mark = t, mark
         mark = yield log
-   
+        t = time()
+        if prev_mark is not None:
+     
