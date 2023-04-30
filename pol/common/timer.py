@@ -14,4 +14,4 @@ def timer_log(num_iter=1000):
         if prev_mark is not None:
             mean_t[prev_mark].append(t - prev_t)
 
-      
+        if mark is None and len(list(mean_t.values())[0]) >= num_iter
