@@ -18,4 +18,4 @@ def timer_log(num_iter=1000):
             log = {"time/" + k: np.mean(v) * 1000 for k, v in mean_t.items()}
             mean_t = defaultdict(list)
         else:
-            log = {
+            log = {}
