@@ -1,4 +1,10 @@
 optim:
     lr: 5e-4
     eps: 1e-3
-    clip_grad
+    clip_grad: 40
+
+agent:
+    rnn_size: 128
+    actors: 8
+    unroll: 32
+  
