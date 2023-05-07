@@ -7,4 +7,7 @@ agent:
     rnn_size: 128
     actors: 8
     unroll: 32
-  
+    burnin: 16
+    batch_size: 32
+    gamma: 0.99
+    target_t
