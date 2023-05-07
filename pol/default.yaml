@@ -10,4 +10,9 @@ agent:
     burnin: 16
     batch_size: 32
     gamma: 0.99
-    target_t
+    target_tau: 0.05
+    eps: 0.01
+
+self_sup:
+    lr: 5e-4
+    ri
