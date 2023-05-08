@@ -15,4 +15,9 @@ agent:
 
 self_sup:
     lr: 5e-4
-    ri
+    ri_momentum: 0.99
+
+buffer:
+    device: cuda
+    size: 1e5
+    war
