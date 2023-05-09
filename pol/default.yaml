@@ -20,4 +20,9 @@ self_sup:
 buffer:
     device: cuda
     size: 1e5
-    war
+    warmup: 1e4
+
+train:
+    frames: 1e6
+    max_ep_len: 1000
+   
