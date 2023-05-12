@@ -25,4 +25,5 @@ buffer:
 train:
     frames: 1e6
     max_ep_len: 1000
-   
+    learner_every: 4
+    log_every: 100
