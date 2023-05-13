@@ -1,1 +1,2 @@
-from .actor 
+from .actor import actor_iter
+from .model import DQN
