@@ -10,4 +10,6 @@ def actor_iter(env, model, predictor, warmup, eps=None):
     hx_pred = None
     step = {"obs": env.reset()}
 
-    timer = 
+    timer = timer_log(100)
+    next(timer)
+    if eps is No
