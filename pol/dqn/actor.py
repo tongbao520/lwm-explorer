@@ -12,4 +12,5 @@ def actor_iter(env, model, predictor, warmup, eps=None):
 
     timer = timer_log(100)
     next(timer)
-    if eps is No
+    if eps is None:
+        eps = (0.4 ** torch.linspace(1, 8, env.n
