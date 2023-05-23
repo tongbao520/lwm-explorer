@@ -15,4 +15,7 @@ def actor_iter(env, model, predictor, warmup, eps=None):
     if eps is None:
         eps = (0.4 ** torch.linspace(1, 8, env.num_envs))[..., None]
     mean_reward, mean_len = [], []
-   
+    log = {}
+
+    for n_iter in count():
+        
