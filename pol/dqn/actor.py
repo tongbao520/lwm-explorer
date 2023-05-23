@@ -18,4 +18,6 @@ def actor_iter(env, model, predictor, warmup, eps=None):
     log = {}
 
     for n_iter in count():
-        
+        full_step = yield step, hx, log
+
+        timer.send("act
