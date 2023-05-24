@@ -20,4 +20,5 @@ def actor_iter(env, model, predictor, warmup, eps=None):
     for n_iter in count():
         full_step = yield step, hx, log
 
-        timer.send("act
+        timer.send("actor/action")
+        action = torch.randint(env.ac
