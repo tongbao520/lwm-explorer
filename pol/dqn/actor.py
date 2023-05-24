@@ -21,4 +21,5 @@ def actor_iter(env, model, predictor, warmup, eps=None):
         full_step = yield step, hx, log
 
         timer.send("actor/action")
-        action = torch.randint(env.ac
+        action = torch.randint(env.action_space.n, (env.num_envs, 1))
+        if
