@@ -22,4 +22,6 @@ def actor_iter(env, model, predictor, warmup, eps=None):
 
         timer.send("actor/action")
         action = torch.randint(env.action_space.n, (env.num_envs, 1))
-        if
+        if n_iter >= minstep:
+            with torch.no_grad():
+  
