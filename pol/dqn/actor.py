@@ -25,4 +25,5 @@ def actor_iter(env, model, predictor, warmup, eps=None):
         if n_iter >= minstep:
             with torch.no_grad():
                 _, ri, hx_pred = predictor.get_error(full_step, hx_pred)
-                full_ste
+                full_step = full_step[1:]
+                full_step[
