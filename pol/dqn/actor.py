@@ -26,4 +26,6 @@ def actor_iter(env, model, predictor, warmup, eps=None):
             with torch.no_grad():
                 _, ri, hx_pred = predictor.get_error(full_step, hx_pred)
                 full_step = full_step[1:]
-                full_step[
+                full_step["reward"] += ri
+
+                qs, hx = model(*
