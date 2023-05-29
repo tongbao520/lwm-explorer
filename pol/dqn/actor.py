@@ -28,4 +28,5 @@ def actor_iter(env, model, predictor, warmup, eps=None):
                 full_step = full_step[1:]
                 full_step["reward"] += ri
 
-                qs, hx = model(*
+                qs, hx = model(**full_step, hx=hx)
+                action_g
