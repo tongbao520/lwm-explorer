@@ -29,4 +29,5 @@ def actor_iter(env, model, predictor, warmup, eps=None):
                 full_step["reward"] += ri
 
                 qs, hx = model(**full_step, hx=hx)
-                action_g
+                action_greedy = qs[0].argmax(1)[..., None].cpu()
+      
