@@ -31,4 +31,7 @@ def actor_iter(env, model, predictor, warmup, eps=None):
                 qs, hx = model(**full_step, hx=hx)
                 action_greedy = qs[0].argmax(1)[..., None].cpu()
             x = torch.rand(env.num_envs, 1) > eps
-            action[x] 
+            action[x] = action_greedy[x]
+
+        timer.send("actor/env")
+        # don
