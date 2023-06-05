@@ -34,4 +34,5 @@ def actor_iter(env, model, predictor, warmup, eps=None):
             action[x] = action_greedy[x]
 
         timer.send("actor/env")
-        # don
+        # done = 1 means obs is first step of next episode
+      
