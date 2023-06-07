@@ -36,4 +36,6 @@ def actor_iter(env, model, predictor, warmup, eps=None):
         timer.send("actor/env")
         # done = 1 means obs is first step of next episode
         # prev_obs + action = obs
-        obs, reward, d
+        obs, reward, done, infos = env.step(action)
+
+        log = time
