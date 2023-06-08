@@ -40,4 +40,5 @@ def actor_iter(env, model, predictor, warmup, eps=None):
 
         log = timer.send(None)
 
-        ep = [info["episode"] for info 
+        ep = [info["episode"] for info in infos if "episode" in info]
+        mean_rewa
