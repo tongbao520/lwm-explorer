@@ -42,4 +42,5 @@ def actor_iter(env, model, predictor, warmup, eps=None):
 
         ep = [info["episode"] for info in infos if "episode" in info]
         mean_reward += [x["r"] for x in ep]
-        mean_len += [x[
+        mean_len += [x["l"] for x in ep]
+        if len(mean_reward) >=
