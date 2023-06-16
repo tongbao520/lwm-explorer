@@ -46,4 +46,6 @@ def actor_iter(env, model, predictor, warmup, eps=None):
         if len(mean_reward) >= env.num_envs:
             log = {
                 "reward": np.mean(mean_reward),
-                "l
+                "len": np.mean(mean_len),
+                **log,
+            }
