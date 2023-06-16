@@ -49,3 +49,5 @@ def actor_iter(env, model, predictor, warmup, eps=None):
                 "len": np.mean(mean_len),
                 **log,
             }
+            mean_reward, mean_len, = [], []
+        i
