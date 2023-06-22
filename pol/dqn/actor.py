@@ -53,4 +53,4 @@ def actor_iter(env, model, predictor, warmup, eps=None):
         if "episode" in infos[-1]:
             log = {"reward_last": infos[-1]["episode"]["r"], **log}
 
-        ste
+        step = {"obs": obs, "action": action, "reward": reward, "don
