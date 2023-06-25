@@ -2,4 +2,5 @@ import torch
 
 
 class DictWithSlicing(dict):
-    def
+    def __getitem__(self, key):
+        if isinstance(key
