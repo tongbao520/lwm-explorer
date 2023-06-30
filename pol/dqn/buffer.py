@@ -13,4 +13,5 @@ class Buffer:
         self.maxlen, self.num_env, self.device = maxlen, num_env, device
         self.cursor = self._size = 0
 
-        def tensor(shape=(1,
+        def tensor(shape=(1,), dtype=torch.float):
+            return 
