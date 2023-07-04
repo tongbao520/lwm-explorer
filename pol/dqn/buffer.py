@@ -19,4 +19,5 @@ class Buffer:
             )
 
         self._buffer = {
-            "obs": tensor(o
+            "obs": tensor(obs_shape, torch.uint8),
+            "action"
