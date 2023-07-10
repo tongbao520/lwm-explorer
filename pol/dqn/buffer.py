@@ -22,4 +22,7 @@ class Buffer:
             "obs": tensor(obs_shape, torch.uint8),
             "action": tensor(dtype=torch.long),
             "reward": tensor(),
-            "done": tensor(dtype=
+            "done": tensor(dtype=torch.uint8),
+        }
+
+    def query(self, idx, id
