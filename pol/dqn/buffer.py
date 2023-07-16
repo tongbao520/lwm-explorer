@@ -29,3 +29,5 @@ class Buffer:
         qsize = len(idx)
         s = torch.arange(steps - 1, -1, -1)
         q0 = (idx[None, ...].repeat(steps, 1) - s[..., None]).flatten()
+        q1 = idx_env[None, ...].repeat(steps, 1).flatten()
+  
