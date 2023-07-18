@@ -35,4 +35,7 @@ class Buffer:
                 k: v[q0, q1].view(steps, qsize, *v.shape[2:]).to(device)
                 for k, v in self._buffer.items()
             }
- 
+        )
+
+    def append(self, step):
+      
