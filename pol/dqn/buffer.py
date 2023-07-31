@@ -43,4 +43,4 @@ class Buffer:
                 self._buffer[k][self.cursor] = 0
             else:
                 assert step[k].dtype == self._buffer[k].dtype
-   
+                assert step[k].shape == self._buffer[k]
