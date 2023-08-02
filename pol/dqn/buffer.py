@@ -45,4 +45,5 @@ class Buffer:
                 assert step[k].dtype == self._buffer[k].dtype
                 assert step[k].shape == self._buffer[k].shape[1:]
                 self._buffer[k][self.cursor] = step[k].to(self.device)
-        self.cursor = (self.cur
+        self.cursor = (self.cursor + 1) % self.maxlen
+        self._size = m
