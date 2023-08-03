@@ -46,4 +46,6 @@ class Buffer:
                 assert step[k].shape == self._buffer[k].shape[1:]
                 self._buffer[k][self.cursor] = step[k].to(self.device)
         self.cursor = (self.cursor + 1) % self.maxlen
-        self._size = m
+        self._size = min(self.maxlen, self._size + 1)
+
+    def get_recent(se
