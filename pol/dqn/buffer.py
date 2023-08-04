@@ -48,4 +48,5 @@ class Buffer:
         self.cursor = (self.cursor + 1) % self.maxlen
         self._size = min(self.maxlen, self._size + 1)
 
-    def get_recent(se
+    def get_recent(self, steps, device="cuda"):
+        if len(self)
