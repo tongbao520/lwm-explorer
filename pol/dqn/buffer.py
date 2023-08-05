@@ -49,4 +49,6 @@ class Buffer:
         self._size = min(self.maxlen, self._size + 1)
 
     def get_recent(self, steps, device="cuda"):
-        if len(self)
+        if len(self) == 0:
+            return None
+        idx = torc
