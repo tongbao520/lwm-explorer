@@ -57,4 +57,7 @@ class Buffer:
         if len(self) < steps:
             for el in step.values():
                 el[: steps - len(self)] = 0
-        
+        return step
+
+    def __len__(self):
+        return self.
