@@ -46,3 +46,25 @@ class Learner:
         batch = self.buffer.query(idx0, idx1, self.sample_steps)
         loss_pred, ri, _ = self.predictor.get_error(batch, update_stats=True)
         if self.add_ri:
+            batch["reward"][1:] += ri
+        td_error, log = self.td_error(batch, None)
+        loss = td_error.pow(2).sum(0)
+        return loss, loss_pred, ri, log
+
+    def train(self, need_stat=True):
+        loss, loss_pred, ri, log = self.loss_uniform()
+        self.optim.step(loss.mean())
+        self.predictor.optim.step(loss_pred)
+        self._update_target()
+
+        if need_stat:
+            log.update(
+                {
+                    "ri_std": ri.std(),
+                    "ri_mean": ri.mean(),
+                    "ri_run_mean": self.predictor.ri_mean,
+                    "ri_run_std": self.predictor.ri_std,
+                    "loss_predictor": loss_pred.mean().detach(),
+                }
+            )
+        return log
