@@ -60,4 +60,4 @@ class Buffer:
         return step
 
     def __len__(self):
-        return self.
+        return self._size
