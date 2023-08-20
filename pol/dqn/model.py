@@ -6,4 +6,7 @@ from torch.nn.functional import one_hot
 class DQN(nn.Module):
     def __init__(self, rnn_size, device="cuda"):
         super(DQN, self).__init__()
-        self.devi
+        self.device = device
+        self.rnn_size = rnn_size
+
+       
