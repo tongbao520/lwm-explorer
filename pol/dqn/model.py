@@ -9,4 +9,5 @@ class DQN(nn.Module):
         self.device = device
         self.rnn_size = rnn_size
 
-        self.encoder = nn.Sequential(nn.Linear(4 + 4 + 1, 32), 
+        self.encoder = nn.Sequential(nn.Linear(4 + 4 + 1, 32), nn.ReLU())
+        # self.rnn = nn.GRUCell(32, self.
