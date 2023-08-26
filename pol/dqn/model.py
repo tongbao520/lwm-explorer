@@ -12,4 +12,5 @@ class DQN(nn.Module):
         self.encoder = nn.Sequential(nn.Linear(4 + 4 + 1, 32), nn.ReLU())
         # self.rnn = nn.GRUCell(32, self.rnn_size)
         self.rnn = nn.GRU(32, self.rnn_size)
-  
+        self.adv = nn.Sequential(
+       
