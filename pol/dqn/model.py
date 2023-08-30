@@ -14,4 +14,5 @@ class DQN(nn.Module):
         self.rnn = nn.GRU(32, self.rnn_size)
         self.adv = nn.Sequential(
             nn.Linear(self.rnn_size, self.rnn_size),
-         
+            nn.ReLU(),
+            nn.Linear(self.rnn_size
