@@ -15,4 +15,6 @@ class DQN(nn.Module):
         self.adv = nn.Sequential(
             nn.Linear(self.rnn_size, self.rnn_size),
             nn.ReLU(),
-            nn.Linear(self.rnn_size
+            nn.Linear(self.rnn_size, 4, bias=False),
+        )
+        self.val = nn.Sequential(
