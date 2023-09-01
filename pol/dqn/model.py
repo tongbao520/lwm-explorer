@@ -18,4 +18,6 @@ class DQN(nn.Module):
             nn.Linear(self.rnn_size, 4, bias=False),
         )
         self.val = nn.Sequential(
-            nn.Linear(self.rnn_size, self.rnn_s
+            nn.Linear(self.rnn_size, self.rnn_size),
+            nn.ReLU(),
+            nn.Linea
