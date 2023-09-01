@@ -20,4 +20,7 @@ class DQN(nn.Module):
         self.val = nn.Sequential(
             nn.Linear(self.rnn_size, self.rnn_size),
             nn.ReLU(),
-            nn.Linea
+            nn.Linear(self.rnn_size, 1),
+        )
+
+    def forwar
