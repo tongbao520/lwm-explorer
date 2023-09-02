@@ -23,4 +23,6 @@ class DQN(nn.Module):
             nn.Linear(self.rnn_size, 1),
         )
 
-    def forward(self, obs, action, reward, done, hx=None, only_hx=Fals
+    def forward(self, obs, action, reward, done, hx=None, only_hx=False):
+        mask = (1 - done).float()
+        a = one
