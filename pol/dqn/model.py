@@ -23,4 +23,4 @@ class DQN(nn.Module):
             nn.Linear(self.rnn_size, 1),
         )
 
-    def forwar
+    def forward(self, obs, action, reward, done, hx=None, only_hx=Fals
