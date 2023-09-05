@@ -25,4 +25,5 @@ class DQN(nn.Module):
 
     def forward(self, obs, action, reward, done, hx=None, only_hx=False):
         mask = (1 - done).float()
-        a = one
+        a = one_hot(action[:, :, 0], 4).float() * mask
+        r = reward * mask
