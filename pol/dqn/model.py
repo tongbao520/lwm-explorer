@@ -27,3 +27,6 @@ class DQN(nn.Module):
         mask = (1 - done).float()
         a = one_hot(action[:, :, 0], 4).float() * mask
         r = reward * mask
+        x = torch.cat([obs.float(), a, r], 2)
+
+        ste
