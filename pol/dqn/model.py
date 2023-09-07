@@ -29,4 +29,5 @@ class DQN(nn.Module):
         r = reward * mask
         x = torch.cat([obs.float(), a, r], 2)
 
-        ste
+        steps, batch, *rest = x.shape
+        x = x
