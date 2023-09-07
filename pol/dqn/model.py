@@ -30,4 +30,5 @@ class DQN(nn.Module):
         x = torch.cat([obs.float(), a, r], 2)
 
         steps, batch, *rest = x.shape
-        x = x
+        x = x.view(steps * batch, *rest)
+        x = self.enco
