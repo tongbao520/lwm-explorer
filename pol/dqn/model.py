@@ -31,4 +31,6 @@ class DQN(nn.Module):
 
         steps, batch, *rest = x.shape
         x = x.view(steps * batch, *rest)
-        x = self.enco
+        x = self.encoder(x).view(steps, batch, 32)
+
+        # y = torch.emp
