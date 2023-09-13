@@ -33,4 +33,4 @@ class DQN(nn.Module):
         x = x.view(steps * batch, *rest)
         x = self.encoder(x).view(steps, batch, 32)
 
-        # y = torch.emp
+        # y = torch.empty(steps, batch, self.rnn_size, device=self.devic
