@@ -38,4 +38,6 @@ class DQN(nn.Module):
         #     if hx is not None:
         #         hx *= mask[i]
         #     y[i] = hx = self.rnn(x[i], hx)
-        # h
+        # hx = hx.clone().detach()
+        y, hx = self.rnn(x, hx)
+        
