@@ -40,4 +40,7 @@ class DQN(nn.Module):
         #     y[i] = hx = self.rnn(x[i], hx)
         # hx = hx.clone().detach()
         y, hx = self.rnn(x, hx)
-        
+        if only_hx:
+            return hx
+
+        y = y.view
