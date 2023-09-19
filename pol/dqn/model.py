@@ -46,4 +46,5 @@ class DQN(nn.Module):
         y = y.view(steps * batch, self.rnn_size)
         adv, val = self.adv(y), self.val(y)
         q = val + adv - adv.mean(1, keepdim=True)
-        q = q.view(ste
+        q = q.view(steps, batch, 4)
+        return q, hx
