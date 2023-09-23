@@ -11,4 +11,5 @@ from predictor import Predictor
 
 
 if __name__ == "__main__":
-    parser = argparse.A
+    parser = argparse.ArgumentParser(description="")
+    parser.add_argume
