@@ -12,4 +12,5 @@ from predictor import Predictor
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="")
-    parser.add_argume
+    parser.add_argument("--size", type=int, default=3)
+    parser.add_ar
