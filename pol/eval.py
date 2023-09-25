@@ -14,4 +14,5 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="")
     parser.add_argument("--size", type=int, default=3)
     parser.add_argument("--add_ri", action="store_true")
-    parser.a
+    parser.add_argument("--random", action="store_true")
+    p = parser.p
