@@ -15,4 +15,6 @@ if __name__ == "__main__":
     parser.add_argument("--size", type=int, default=3)
     parser.add_argument("--add_ri", action="store_true")
     parser.add_argument("--random", action="store_true")
-    p = parser.p
+    p = parser.parse_args()
+    cfg = load_cfg("default")
+    cfg.update(var
