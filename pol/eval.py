@@ -17,4 +17,6 @@ if __name__ == "__main__":
     parser.add_argument("--random", action="store_true")
     p = parser.parse_args()
     cfg = load_cfg("default")
-    cfg.update(var
+    cfg.update(vars(p))
+    cfg["env"] = "pol"
+    wandb.init(project="lw
