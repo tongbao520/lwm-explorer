@@ -19,4 +19,7 @@ if __name__ == "__main__":
     cfg = load_cfg("default")
     cfg.update(vars(p))
     cfg["env"] = "pol"
-    wandb.init(project="lw
+    wandb.init(project="lwm", config=cfg)
+
+    num_env = 1
+    envs = make_
