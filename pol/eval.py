@@ -22,4 +22,6 @@ if __name__ == "__main__":
     wandb.init(project="lwm", config=cfg)
 
     num_env = 1
-    envs = make_
+    envs = make_vec_envs(
+        num=num_env,
+        size=cfg["size"]
