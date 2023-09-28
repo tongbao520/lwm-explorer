@@ -24,4 +24,6 @@ if __name__ == "__main__":
     num_env = 1
     envs = make_vec_envs(
         num=num_env,
-        size=cfg["size"]
+        size=cfg["size"],
+        max_ep_len=cfg["train"]["max_ep_len"],
+    )
