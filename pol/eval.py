@@ -27,3 +27,6 @@ if __name__ == "__main__":
         size=cfg["size"],
         max_ep_len=cfg["train"]["max_ep_len"],
     )
+    buffer = Buffer(
+        num_env=num_env,
+        ma
