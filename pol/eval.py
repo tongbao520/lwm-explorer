@@ -29,4 +29,5 @@ if __name__ == "__main__":
     )
     buffer = Buffer(
         num_env=num_env,
-        ma
+        maxlen=int(cfg["buffer"]["size"] / num_env),
+        
