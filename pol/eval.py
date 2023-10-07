@@ -31,4 +31,6 @@ if __name__ == "__main__":
         num_env=num_env,
         maxlen=int(cfg["buffer"]["size"] / num_env),
         obs_shape=(4,),
-        device=cfg["buffer"]["dev
+        device=cfg["buffer"]["device"],
+    )
+    model = DQN(cfg["agent"]["rnn_size"]
