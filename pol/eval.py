@@ -33,4 +33,6 @@ if __name__ == "__main__":
         obs_shape=(4,),
         device=cfg["buffer"]["device"],
     )
-    model = DQN(cfg["agent"]["rnn_size"]
+    model = DQN(cfg["agent"]["rnn_size"]).cuda()
+    pred = Predictor(buffer, cfg)
+    if 
