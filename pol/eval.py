@@ -35,4 +35,7 @@ if __name__ == "__main__":
     )
     model = DQN(cfg["agent"]["rnn_size"]).cuda()
     pred = Predictor(buffer, cfg)
-    if 
+    if cfg["random"]:
+        warmup = 1e8
+    else:
+ 
