@@ -38,4 +38,5 @@ if __name__ == "__main__":
     if cfg["random"]:
         warmup = 1e8
     else:
- 
+        cp = torch.load("models/dqn.pt")
+     
