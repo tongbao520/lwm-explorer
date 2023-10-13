@@ -39,4 +39,5 @@ if __name__ == "__main__":
         warmup = 1e8
     else:
         cp = torch.load("models/dqn.pt")
-     
+        model.load_state_dict(cp)
+        model.eva
