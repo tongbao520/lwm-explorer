@@ -43,4 +43,7 @@ if __name__ == "__main__":
         model.eval()
         pred.load()
         warmup = 0
-    actor = actor_
+    actor = actor_iter(envs, model, pred, warmup, eps=0.01)
+
+    reward = []
+    while
