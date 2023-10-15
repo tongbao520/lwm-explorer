@@ -40,4 +40,7 @@ if __name__ == "__main__":
     else:
         cp = torch.load("models/dqn.pt")
         model.load_state_dict(cp)
-        model.eva
+        model.eval()
+        pred.load()
+        warmup = 0
+    actor = actor_
