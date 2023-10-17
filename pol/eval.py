@@ -47,4 +47,6 @@ if __name__ == "__main__":
 
     reward = []
     while len(reward) < 128:
-        full_step = buffer.ge
+        full_step = buffer.get_recent(2)
+        step, hx, log = actor.send(full_step)
+      
