@@ -46,4 +46,5 @@ if __name__ == "__main__":
     actor = actor_iter(envs, model, pred, warmup, eps=0.01)
 
     reward = []
-    while
+    while len(reward) < 128:
+        full_step = buffer.ge
