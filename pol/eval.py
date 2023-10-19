@@ -53,4 +53,4 @@ if __name__ == "__main__":
         if "reward" in log:
             reward.append(log["reward"])
 
-    wandb.log({"fi
+    wandb.log({"final_reward": np.mean(reward)})
