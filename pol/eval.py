@@ -51,4 +51,6 @@ if __name__ == "__main__":
         step, hx, log = actor.send(full_step)
         buffer.append(step)
         if "reward" in log:
-    
+            reward.append(log["reward"])
+
+    wandb.log({"fi
