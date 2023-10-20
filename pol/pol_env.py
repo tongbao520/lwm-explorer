@@ -29,3 +29,39 @@ def gen_labyrinth(size, np_random):
     edges = np.zeros((size, size, 4), dtype=bool)
     visit = np.zeros((size, size), dtype=bool)
     stack = [(0, 0)]
+
+    while len(stack):
+        cur = stack.pop()
+        visit[cur] = 1
+        neib = [d for d in STEPS if not visit[step_grid(cur, d, size)]]
+        if len(neib):
+            stack.append(cur)
+            next_d = np_random.choice(neib)
+            next_pos = step_grid(cur, next_d, size)
+            edges[cur][next_d] = edges[next_pos][OPPOSITE[next_d]] = 1
+            stack.append(next_pos)
+    return edges
+
+
+class PolEnv(gym.Env):
+    metadata = {"render.modes": ["human"]}
+
+    def __init__(self, size):
+        self.size = size
+        self.action_space = spaces.Discrete(4)
+        self.observation_space = spaces.Discrete(4)
+        self.seed()
+
+    def seed(self, seed=None):
+        self.np_random, seed = seeding.np_random(seed)
+        return [seed]
+
+    def step(self, action):
+        assert action in STEPS
+        if self.map[self.pos][action]:
+            self.pos = step_grid(self.pos, action, self.size)
+        self.visit[self.pos] = 1
+        done = self.visit.all()
+        state = self.map[self.pos].astype(np.uint8)
+        reward = -1.0
+        return state, reward, done, {}
