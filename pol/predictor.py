@@ -1,3 +1,4 @@
 import random
 import torch
-import tor
+import torch.nn as nn
+from torch.nn.functional impor
