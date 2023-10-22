@@ -65,3 +65,28 @@ class PolEnv(gym.Env):
         state = self.map[self.pos].astype(np.uint8)
         reward = -1.0
         return state, reward, done, {}
+
+    def reset(self):
+        self.map = gen_labyrinth(self.size, self.np_random)
+        self.visit = np.zeros((self.size, self.size), dtype=bool)
+        # self.pos = (0, 0)
+        self.pos = tuple(self.np_random.randint(self.size, size=2))
+        self.visit[self.pos] = 1
+        return self.map[self.pos].astype(np.uint8)
+
+    def render(self, mode="human"):
+        m2 = np.zeros((self.size * 2 + 1, self.size * 2 + 1), dtype=int)
+        m2[1::2, 1::2] = 1
+        m2[:-1:2, 1::2] = self.map[:, :, LEFT]
+        m2[1::2, :-1:2] = self.map[:, :, UP]
+        m2[self.pos[0] * 2 + 1, self.pos[1] * 2 + 1] = 2
+
+        for s in m2.astype(str):
+            s = "".join(s)
+            s = s.replace("0", "#")
+            s = s.replace("1", " ")
+            s = s.replace("2", "@")
+            sys.stdout.write(s + "\n")
+
+    def close(self):
+        self.map = None
