@@ -5,4 +5,5 @@ from torch.nn.functional import one_hot
 from common.optim import ParamOptim
 
 
-class Pre
+class PredictorModel(nn.Module):
+    def __init__(
