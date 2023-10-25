@@ -9,4 +9,4 @@ class PredictorModel(nn.Module):
     def __init__(self, rnn_size):
         super(PredictorModel, self).__init__()
         self.rnn_size = rnn_size
-        s
+        self.encoder = nn.Sequential(nn.Linear(4 + 4, 32), nn.
