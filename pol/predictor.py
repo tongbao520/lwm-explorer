@@ -11,4 +11,6 @@ class PredictorModel(nn.Module):
         self.rnn_size = rnn_size
         self.encoder = nn.Sequential(nn.Linear(4 + 4, 32), nn.ReLU())
         # self.rnn = nn.GRUCell(32, self.rnn_size)
-        self.rnn = nn.GRU(32, self.rnn_
+        self.rnn = nn.GRU(32, self.rnn_size)
+        self.fc = nn.Sequential(
+            nn.
