@@ -15,4 +15,5 @@ class PredictorModel(nn.Module):
         self.fc = nn.Sequential(
             nn.Linear(self.rnn_size, self.rnn_size),
             nn.ReLU(),
-   
+            nn.Linear(self.rnn_size, 4),
+            nn.S
