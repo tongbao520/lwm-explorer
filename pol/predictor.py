@@ -16,4 +16,7 @@ class PredictorModel(nn.Module):
             nn.Linear(self.rnn_size, self.rnn_size),
             nn.ReLU(),
             nn.Linear(self.rnn_size, 4),
-            nn.S
+            nn.Sigmoid(),
+        )
+
+    def forward(self, z, action, don
