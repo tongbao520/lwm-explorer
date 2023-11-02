@@ -19,4 +19,6 @@ class PredictorModel(nn.Module):
             nn.Sigmoid(),
         )
 
-    def forward(self, z, action, don
+    def forward(self, z, action, done, hx=None):
+        unroll, batch, emb_size = z.shape
+      
