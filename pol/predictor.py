@@ -22,4 +22,5 @@ class PredictorModel(nn.Module):
     def forward(self, z, action, done, hx=None):
         unroll, batch, emb_size = z.shape
         a = one_hot(action[:, :, 0], 4).float()
-        z
+        z = torch.cat([z, a], dim=2)
+        z = self.encoder(z.
