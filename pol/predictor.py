@@ -23,4 +23,5 @@ class PredictorModel(nn.Module):
         unroll, batch, emb_size = z.shape
         a = one_hot(action[:, :, 0], 4).float()
         z = torch.cat([z, a], dim=2)
-        z = self.encoder(z.
+        z = self.encoder(z.view(unroll * batch, 4 + 4))
+        z = z.view(
