@@ -27,4 +27,5 @@ class PredictorModel(nn.Module):
         z = z.view(unroll, batch, 32)
 
         # mask = 1 - done.float()
-        # x = torch.empty(unroll, batch, self.
+        # x = torch.empty(unroll, batch, self.rnn_size, device=z.device)
+        # for i in range(unro
