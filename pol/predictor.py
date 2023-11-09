@@ -30,4 +30,5 @@ class PredictorModel(nn.Module):
         # x = torch.empty(unroll, batch, self.rnn_size, device=z.device)
         # for i in range(unroll):
         #     if hx is not None:
-       
+        #         hx *= mask[i]
+        #     
