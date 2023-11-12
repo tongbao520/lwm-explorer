@@ -32,4 +32,8 @@ class PredictorModel(nn.Module):
         #     if hx is not None:
         #         hx *= mask[i]
         #     x[i] = hx = self.rnn(z[i], hx)
-        # hx = hx.cl
+        # hx = hx.clone().detach()
+
+        x, hx = self.rnn(z, hx)
+
+    
