@@ -36,4 +36,4 @@ class PredictorModel(nn.Module):
 
         x, hx = self.rnn(z, hx)
 
-    
+        x = self.fc(x.view(unroll * batch, self.rnn
