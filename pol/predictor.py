@@ -42,4 +42,5 @@ class PredictorModel(nn.Module):
 
 
 class Predictor:
-    def __init_
+    def __init__(self, buffer, cfg, device="cuda"):
+        self.d
