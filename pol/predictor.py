@@ -46,4 +46,5 @@ class Predictor:
         self.device = device
         self.buffer = buffer
 
-        self.model 
+        self.model = PredictorModel(cfg["agent"]["rnn_size"])
+        self.mod
