@@ -48,4 +48,5 @@ class Predictor:
 
         self.model = PredictorModel(cfg["agent"]["rnn_size"])
         self.model = self.model.to(device).train()
-        lr = cfg["self_sup"][
+        lr = cfg["self_sup"]["lr"]
+        self.optim = ParamOptim(params=self
