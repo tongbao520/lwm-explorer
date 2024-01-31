@@ -51,4 +51,6 @@ class Predictor:
         lr = cfg["self_sup"]["lr"]
         self.optim = ParamOptim(params=self.model.parameters(), lr=lr)
         self.ri_mean = self.ri_std = None
-        self.ri_momentum = cfg["self_s
+        self.ri_momentum = cfg["self_sup"]["ri_momentum"]
+
+    def get_error(self, batch, hx=None, up
