@@ -50,4 +50,5 @@ class Predictor:
         self.model = self.model.to(device).train()
         lr = cfg["self_sup"]["lr"]
         self.optim = ParamOptim(params=self.model.parameters(), lr=lr)
-        self.ri_mean = self.r
+        self.ri_mean = self.ri_std = None
+        self.ri_momentum = cfg["self_s
