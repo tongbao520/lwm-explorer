@@ -53,4 +53,5 @@ class Predictor:
         self.ri_mean = self.ri_std = None
         self.ri_momentum = cfg["self_sup"]["ri_momentum"]
 
-    def get_error(self, batch, hx=None, up
+    def get_error(self, batch, hx=None, update_stats=False):
+        z = batch["obs"].float()
