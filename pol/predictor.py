@@ -55,3 +55,5 @@ class Predictor:
 
     def get_error(self, batch, hx=None, update_stats=False):
         z = batch["obs"].float()
+        action = batch["action"][1:]
+        done = batch["don
