@@ -57,4 +57,5 @@ class Predictor:
         z = batch["obs"].float()
         action = batch["action"][1:]
         done = batch["done"][:-1]
-        z_pred, hx = self.model(z
+        z_pred, hx = self.model(z[:-1], action, done, hx)
+        err = (z[1:] - z_pred).p
