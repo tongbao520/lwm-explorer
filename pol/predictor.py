@@ -58,4 +58,7 @@ class Predictor:
         action = batch["action"][1:]
         done = batch["done"][:-1]
         z_pred, hx = self.model(z[:-1], action, done, hx)
-        err = (z[1:] - z_pred).p
+        err = (z[1:] - z_pred).pow(2).mean(2)
+
+        ri = err.detach()
+        if update_st
