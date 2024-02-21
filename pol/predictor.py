@@ -61,4 +61,5 @@ class Predictor:
         err = (z[1:] - z_pred).pow(2).mean(2)
 
         ri = err.detach()
-        if update_st
+        if update_stats:
+            if self.ri_mean is None:
