@@ -63,3 +63,5 @@ class Predictor:
         ri = err.detach()
         if update_stats:
             if self.ri_mean is None:
+                self.ri_mean = ri.mean()
+         
