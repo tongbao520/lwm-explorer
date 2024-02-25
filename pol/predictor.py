@@ -64,4 +64,6 @@ class Predictor:
         if update_stats:
             if self.ri_mean is None:
                 self.ri_mean = ri.mean()
-         
+                self.ri_std = ri.std()
+            else:
+                m = s
