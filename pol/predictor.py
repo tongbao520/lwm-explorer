@@ -70,4 +70,5 @@ class Predictor:
                 self.ri_mean = m * self.ri_mean + (1 - m) * ri.mean()
                 self.ri_std = m * self.ri_std + (1 - m) * ri.std()
         if self.ri_mean is not None:
-            ri = (ri[...,
+            ri = (ri[..., None] - self.ri_mean) / self.ri_std
+   
