@@ -76,4 +76,4 @@ class Predictor:
         return err.mean(), ri, hx
 
     def train(self):
-        # this fu
+        # this function is used only for pretrain, main training loop is i
