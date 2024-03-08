@@ -73,4 +73,7 @@ class Predictor:
             ri = (ri[..., None] - self.ri_mean) / self.ri_std
         else:
             ri = 0
-        return err.mean
+        return err.mean(), ri, hx
+
+    def train(self):
+        # this fu
