@@ -76,4 +76,6 @@ class Predictor:
         return err.mean(), ri, hx
 
     def train(self):
-        # this function is used only for pretrain, main training loop is i
+        # this function is used only for pretrain, main training loop is in dqn learner
+        batch_size = 64
+ 
