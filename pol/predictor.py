@@ -79,4 +79,5 @@ class Predictor:
         # this function is used only for pretrain, main training loop is in dqn learner
         batch_size = 64
         sample_steps = 100
-        if len(se
+        if len(self.buffer) < self.buffer.maxlen:
+            no_pr
