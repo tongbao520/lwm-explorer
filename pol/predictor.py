@@ -80,4 +80,6 @@ class Predictor:
         batch_size = 64
         sample_steps = 100
         if len(self.buffer) < self.buffer.maxlen:
-            no_pr
+            no_prev = set(range(sample_steps))
+        else:
+          
