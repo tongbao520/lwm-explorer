@@ -84,4 +84,6 @@ class Predictor:
         else:
             no_prev = set(
                 (self.buffer.cursor + i) % self.buffer.maxlen
-                for i in range(sample_
+                for i in range(sample_steps)
+            )
+        all_idx = list(set(range(
