@@ -90,4 +90,5 @@ class Predictor:
         idx0 = torch.tensor(random.choices(all_idx, k=batch_size))
         idx1 = torch.tensor(random.choices(range(self.buffer.num_env), k=batch_size))
         batch = self.buffer.query(idx0, idx1, sample_steps)
-        loss = self.get_error(batc
+        loss = self.get_error(batch, update_stats=True)[0]
+        self.optim.step(loss)
