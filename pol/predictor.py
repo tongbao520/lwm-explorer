@@ -95,4 +95,4 @@ class Predictor:
         return {"loss_predictor": loss.item()}
 
     def load(self):
-        cp = torch.load
+        cp = torch.load("models/predictor.pt", map_location=self.device)
