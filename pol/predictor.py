@@ -100,4 +100,4 @@ class Predictor:
         self.model.load_state_dict(model)
 
     def save(self):
-    
+        data = [self.ri_mean, self.ri_std, self.model.state
